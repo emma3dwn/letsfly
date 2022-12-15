@@ -1,0 +1,51 @@
+/* MOBILE NAVBAR */
+
+
+/* DESKTOP NAVBAR */
+@media screen and (min-width: 800px) {
+    .navbarDesktopWrapper {
+      position: fixed;
+      display: flex;
+      width: 100%;
+      height: 11vh;
+      left: 0;
+      justify-content: space-between;
+      align-items: flex-end;
+      background-color: transparent;
+      color: white;
+      padding: 0.5rem 3rem 0.5rem 3rem;
+    }
+  
+    .navbarMobileWrapper {
+      display: none;
+    }
+  
+    .logoWrapper {
+      display: flex;
+      align-items: flex-start;
+      width: 20%;
+    }
+
+    .leftSideNavbar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 50%;
+    }
+  
+    .rightSideNavbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 1rem;
+      width: 25%;
+    }
+  }
+  
+  /* Ipad Mini */
+  @media screen and (width: 768px) {
+    .mobileMenuWrapperShow {
+      width: 45%;
+    }
+  }
