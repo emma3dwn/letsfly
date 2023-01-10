@@ -1,0 +1,12 @@
+.bannerSection {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.bannerTextSection {
+}
+
+.bannerText {
+    margin: 5rem;
+}

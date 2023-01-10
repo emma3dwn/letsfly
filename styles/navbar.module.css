@@ -1,0 +1,49 @@
+.navbarDesktopWrapper {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 11vh;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem 5rem 0.5rem 4rem;
+  margin-top: 1.5rem;
+}
+  
+.navbarMobileWrapper {
+  display: none;
+}
+  
+.logoWrapper {
+  display: flex;
+  align-items: flex-start;
+  width: 25%;
+}
+
+.navbarLogo {
+  width: 220px;
+}
+  
+.rightSideNavbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  width: 25%;
+  text-decoration: none;
+}
+
+.signUpBtn, .signInBtn {
+  text-decoration: none;
+  color: white;
+}
+
+.signInBtn {
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
+  border-radius: 50px;
+  width: 35%;
+  padding: 0.2rem 0rem 0.2rem 0rem;
+}

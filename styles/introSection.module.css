@@ -1,0 +1,7 @@
+.introSectionWrapper {
+    background-color: #323232;
+}
+
+.introSectionOneParagraph, .introSectionTwoParagraph {
+    color: white;
+}

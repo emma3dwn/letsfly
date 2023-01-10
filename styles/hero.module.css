@@ -1,0 +1,73 @@
+.heroSection {
+    background: url('../public/assets/hero_img.png');
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heroTextSection {
+    display: flex;
+    overflow: hidden;
+}
+
+
+/* LEFT SIDE - SLOGAN & INFO */
+.heroTextContainerLeft {
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    padding: 0rem 0rem 0rem 3rem;
+    margin-right: 38rem;
+}
+
+.leftSideHeadingContainer {
+    width: 25rem;
+    padding-top: 10rem;
+    padding-bottom: 1rem;
+}
+
+.leftSideParagraphContainer {
+    width: 32rem;
+    padding-bottom: 1rem;
+}
+
+.leftSideParagraph {
+    font-size: 24px;
+    color: white;
+}
+
+.leftSideIllustrationContainer {
+    width: 35rem;
+}
+
+.planeIllustration {
+    width: 100%;
+}
+
+
+/* RIGHT SIDE - EMAIL INPUT */
+.heroTextContainerRight {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20rem; 
+}
+
+.rightSideHeadingContainer {
+    width: 16rem;
+}
+
+.rightSideHeading {
+    font-size: 58px;
+    padding-bottom: 1rem;
+}
+
+.rightSideEmailInput {
+    display: flex;
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 16rem;
+    padding: 0.2rem 0rem 0.2rem 0.7rem;
+}
