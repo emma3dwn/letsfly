@@ -1,46 +1,38 @@
 .heroSection {
     background: url('../public/assets/hero_img.png');
     display: flex;
-    width: 100vw;
     height: 100vh;
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.heroTextSection {
+.heroTextWrapper {
+    max-width: 100%;
     display: flex;
-    overflow: hidden;
+    flex-direction: row;
+    align-items: flex-end;
+    position: relative;
+    bottom: 5vh;
+    justify-content: space-between;
+    padding: 0rem 0rem 0rem 4rem;
 }
-
 
 /* LEFT SIDE - SLOGAN & INFO */
 .heroTextContainerLeft {
-    display: flex;
+    max-width: 50%;
     flex-direction: column;
-    width: 18rem;
-    padding: 0rem 0rem 0rem 3rem;
-    margin-right: 38rem;
 }
 
-.leftSideHeadingContainer {
-    width: 25rem;
-    padding-top: 10rem;
-    padding-bottom: 1rem;
-}
-
-.leftSideParagraphContainer {
-    width: 32rem;
-    padding-bottom: 1rem;
+.leftSideHeading {
+    max-width: 5em;
+    font-size: clamp(3rem, 10vw, 10rem);
+    line-height: 1.1;
 }
 
 .leftSideParagraph {
-    font-size: 24px;
+    font-size: clamp(1rem, 2vw, 3rem);
+    max-width: 32em;
     color: white;
-}
-
-.leftSideIllustrationContainer {
-    width: 35rem;
 }
 
 .planeIllustration {
@@ -50,24 +42,21 @@
 
 /* RIGHT SIDE - EMAIL INPUT */
 .heroTextContainerRight {
-    display: flex;
+    max-width: 30%;
     flex-direction: column;
-    padding-top: 20rem; 
-}
-
-.rightSideHeadingContainer {
-    width: 16rem;
+    position: relative;
+    bottom: 3vh;
 }
 
 .rightSideHeading {
-    font-size: 58px;
+    font-size: clamp(2rem, 5vw, 6rem);
     padding-bottom: 1rem;
+    line-height: 1.1;
 }
 
-.rightSideEmailInput {
-    display: flex;
+.rightSideParagraph {
     border: 2px solid white;
     border-radius: 50px;
-    width: 16rem;
-    padding: 0.2rem 0rem 0.2rem 0.7rem;
+    width: clamp(14rem, 12vw, 18rem);
+    padding: 0.2rem 0rem 0.2rem 0.7rem; 
 }

@@ -1,20 +1,32 @@
+import React, { useState } from "react";
 import Head from 'next/head';
 import { client } from '../lib/apollo';
 import { gql } from '@apollo/client';
 
 import api from '../api/api'
 
+import Popup from '../components/Popup'
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
-import BannerOne from '../components/BannerOne';
-import BannerTwo from '../components/BannerTwo'
+import Banner from '../components/Banner';
 import IntroSection from '../components/IntroSection';
 import InfoSection from '../components/InfoSection';
 
 function Home({ posts }) {
+
   return (
     <div className='homeContainer'>
+      <div className='popup'>
+          {
+            posts.map((post) => {
+              return (
+                <Popup key={post.id} post={post}></Popup>
+              )
+            })
+          }
+        </div>
+
       <Head>
         <title>Let's Fly</title>
         <meta name="description" content="Let's fly" />
@@ -41,19 +53,20 @@ function Home({ posts }) {
               )
             })
           }
-        </div>
+        </div> 
 
         <div className='bannerOne'>
           {
             posts.map((post) => {
               return (
-                <BannerOne key={post.id} post={post}></BannerOne>
+                <Banner key={post.id} post={post} text={post.banners.bannerOne}></Banner>
               )
             })
           }
         </div>
-
-        <div className='IntroSection'>
+        
+        {/*
+        <div className='introSection'>
           {
             posts.map((post) => {
               return (
@@ -62,17 +75,19 @@ function Home({ posts }) {
             })
           }
         </div>
+        */}
  
         <div className='bannerTwo'>
           {
             posts.map((post) => {
               return (
-                <BannerTwo key={post.id} post={post}></BannerTwo>
+                <Banner key={post.id} post={post} text={post.banners.bannerTwo}></Banner>
               )
             })
           }
         </div>
 
+      
         <div className='infoSection'>
           {
             posts.map((post) => {
@@ -82,6 +97,8 @@ function Home({ posts }) {
             })
           }
         </div>
+      
+        
     </main>
     <footer>
         <div className='footer'>

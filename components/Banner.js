@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from '../styles/banners.module.css'
 
-function BannerOne({ post }) {
+function Banner(props) {
   return (
     <section className={styles.bannerSection}>
         <div className={styles.bannerTextSection}>
-            <h3 className={styles.bannerText}> {post.banners.bannerOne} </h3>
-        </div>
+            <p className={styles.bannerText}> {props.text} </p>
+        </div> 
     </section>
   )
-}
+} 
 
-export default BannerOne
+export default Banner

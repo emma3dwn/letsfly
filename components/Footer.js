@@ -4,6 +4,7 @@ import styles from '../styles/footer.module.css'
 
 function Footer({ post }) {
   return (
+  <>
     <section className={styles.footerSectionWrapper}>
       {/* LEFT SIDE */}
       <div className={styles.footerLeftSide}>
@@ -15,23 +16,23 @@ function Footer({ post }) {
         </div>
         {/* First Links */}
         <div className={styles.footerLeftSideLinksContainerOne}>
-          <Link href='#'>
-            {post.footer.footerLinks}
+          <Link className={styles.footerFirstLinks} href='#'>
+            {post.footer.footerLinks.contactLink.title}
           </Link>
-          <Link href='#'>
-            {post.footer.footerLinks}
+          <Link className={styles.footerFirstLinks} href='#'>
+            {post.footer.footerLinks.aboutUsLink.title}
           </Link>
-          <Link href='#'>
-            {post.footer.footerLinks}
+          <Link className={styles.footerFirstLinks} href='#'>
+            {post.footer.footerLinks.faqLink.title}
           </Link>
         </div>
         {/* Second Links */}
         <div className={styles.footerLeftSideLinksContainerTwo}>
-          <Link href='#'>
-            {post.footer.footerLinks}
+          <Link className={styles.footerSecondLinks} href='#'>
+            {post.footer.footerLinks.termsLink.title}
           </Link>
-          <Link href='#'>
-            {post.footer.footerLinks}
+          <Link className={styles.footerSecondLinks} href='#'>
+            {post.footer.footerLinks.privacyLink.title}
           </Link>
         </div>
       </div>
@@ -55,12 +56,13 @@ function Footer({ post }) {
           </div>
         </div>
       </div>
-
-      {/* FOOTER BOTTOM/COPYRIGHT */}
-      <div className={styles.footerCopyrightContainer}>
-        <p className={styles.footerCopyright}> {post.footer.copyright} </p>
-      </div>
     </section>
+
+    {/* FOOTER BOTTOM/COPYRIGHT */}
+    <div className={styles.footerCopyrightContainer}>
+      <p className={styles.footerCopyright}> {post.footer.copyright} </p>
+    </div>
+  </>
   )
 }
 

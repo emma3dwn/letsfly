@@ -1,0 +1,81 @@
+.footerSectionWrapper {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    color: white;
+}
+
+/* FOOTER LEFT SIDE */
+.footerLeftSide {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerLeftSideLogo {
+    width: 70%;
+}
+
+.footerLeftSideLinksContainerOne {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 30px 0px;
+}
+
+.footerFirstLinks {
+    padding-bottom: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.footerLeftSideLinksContainerTwo {
+    display: flex;
+    flex-direction: row;
+}
+
+.footerSecondLinks {
+    padding-right: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+/* FOOTER RIGHT SIDE */
+.footerRightSide {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerRightSideFormContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+}
+
+.footerRightSideFormInputField {
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 16rem;
+    padding: 0.2rem 0rem 0.2rem 0.7rem;
+}
+
+.footerSmIconsContainer {
+    display: flex;
+}
+
+.footerSmIconLinkedin, .footerSmIconInstagram, .footerSmIconFacebook {
+    width: 2rem;
+    padding-right: 15px;
+}
+
+/* FOOTER BOTTOM/COPYRIGHT */
+.footerCopyrightContainer {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding-bottom: 30px;
+}
