@@ -87,7 +87,7 @@ function Home({ posts }) {
           }
         </div>
 
-      
+    
         <div className='infoSection'>
           {
             posts.map((post) => {
