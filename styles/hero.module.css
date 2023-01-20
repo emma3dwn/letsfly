@@ -1,62 +1,119 @@
 .heroSection {
-    background: url('../public/assets/hero_img.png');
-    display: flex;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background: url('../public/assets/hero_img.png');
+  display: flex;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .heroTextWrapper {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    position: relative;
-    bottom: 5vh;
-    justify-content: space-between;
-    padding: 0rem 0rem 0rem 4rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: relative;
+  bottom: 5vh;
+  justify-content: space-between;
+  padding: 0rem 0rem 0rem 4rem;
 }
 
 /* LEFT SIDE - SLOGAN & INFO */
 .heroTextContainerLeft {
-    max-width: 50%;
-    flex-direction: column;
+  max-width: 50%;
+  flex-direction: column;
 }
 
 .leftSideHeading {
-    max-width: 5em;
-    font-size: clamp(3rem, 10vw, 10rem);
-    line-height: 1.1;
+  max-width: 5em;
+  font-size: clamp(3rem, 10vw, 10rem);
+  line-height: 1.1;
 }
 
 .leftSideParagraph {
-    font-size: clamp(1rem, 2vw, 3rem);
-    max-width: 32em;
-    color: white;
+  font-size: clamp(1rem, 2vw, 3rem);
+  max-width: 32em;
+  color: white;
 }
 
-.planeIllustration {
-    width: 100%;
+.planeIllustrationDesktop {
+  width: 100%;
 }
 
+.planeIllustrationMobile {
+    visibility: hidden;
+}
 
-/* RIGHT SIDE - EMAIL INPUT */
+/* RIGHT SIDE - SIGN ME UP/EMAIL */
 .heroTextContainerRight {
-    max-width: 30%;
-    flex-direction: column;
-    position: relative;
-    bottom: 3vh;
+  max-width: 30%;
+  flex-direction: column;
+  position: relative;
+  bottom: 3vh;
 }
 
 .rightSideHeading {
-    font-size: clamp(2rem, 5vw, 6rem);
-    padding-bottom: 1rem;
-    line-height: 1.1;
+  font-size: clamp(2rem, 5vw, 6rem);
+  padding-bottom: 1rem;
+  line-height: 1.1;
 }
 
 .rightSideParagraph {
-    border: 2px solid white;
-    border-radius: 50px;
-    width: clamp(14rem, 12vw, 18rem);
-    padding: 0.2rem 0rem 0.2rem 0.7rem; 
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+/* MEDIA SCREENS */
+@media screen and (max-width: 1024px) {
+  .heroTextWrapper {
+    flex-direction: column;
+    bottom: 0;
+    top: 7.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 0rem 0rem 0rem;
+  }
+
+  /* SLOGAN, INFO & ILLUSTRATION */
+  .heroTextContainerLeft {
+    max-width: 80%;
+  }
+  .leftSideHeading {
+    font-weight: 500;
+    padding-bottom: 1rem;
+    line-height: 1;
+  }
+  .leftSideParagraph {
+    font-size: clamp(0.9rem, 3vw, 5rem);
+  }
+
+  /* SIGN ME UP/EMAIL */
+  .heroTextContainerRight {
+    max-width: 80%;
+    position: relative;
+    bottom: 0vh;
+    align-content: center;
+  }
+
+  .rightSideHeading {
+    font-size: clamp(2rem, 5vw, 6rem);
+    padding-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .rightSideParagraph {
+    padding: 0.5rem 0rem 0.5rem 1rem;
+  }
+
+  .planeIllustrationDesktop {
+    visibility: hidden;
+  }
+
+  .planeIllustrationMobile {
+    visibility: visible;
+    width: 100%;
+    position: relative;
+    top: 4vh;
+  }
 }

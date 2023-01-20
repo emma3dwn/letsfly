@@ -75,7 +75,6 @@ function Home({ posts }) {
             })
           }
         </div>
-        */}
  
         <div className='bannerTwo'>
           {
@@ -97,9 +96,11 @@ function Home({ posts }) {
             })
           }
         </div>
+        */}
       
         
     </main>
+    {/*
     <footer>
         <div className='footer'>
           {
@@ -111,6 +112,7 @@ function Home({ posts }) {
           }
         </div>
       </footer>
+      */}
     </div>
   )
 }
@@ -137,7 +139,9 @@ export async function getStaticProps(){
           mediaItemUrl
         }
         signUpButton
-        signInButton
+        blogLink
+        contactLink
+        downloadAppButton
       }
       banners {
         bannerOne
