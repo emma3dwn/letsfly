@@ -51,7 +51,7 @@
 .rightSideHeading {
     font-size: clamp(2rem, 5vw, 6rem);
     padding-bottom: 1rem;
-    line-height: 1;
+    line-height: 1.1;
 }
 
 .rightSideParagraph {
