@@ -1,0 +1,11 @@
+.buttonBorder {
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 5px 10px 5px 10px;
+  }
+
+  .buttonParagraph:hover {
+    color: #A0A1A1;
+    background-color: white;
+    cursor: pointer;
+  }

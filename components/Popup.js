@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import styles from '../styles/popup.module.css'
+import React, { useEffect, useState } from 'react';
+import styles from '../styles/popup.module.css';
+import SignMeUp from './SignMeUp';
 
-const Modal = ({ children, title }) => {
+const Modal = ({ post }) => {
   const [isShown, setIsShown] = useState(false);
 
   const showModal = () => {
@@ -12,7 +13,7 @@ const Modal = ({ children, title }) => {
     setIsShown(false);
   };
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (!sessionStorage.popupModal) {
       const timer = setTimeout(() => {
         setIsShown(true);
@@ -21,9 +22,9 @@ const Modal = ({ children, title }) => {
 
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, []); */
 
-  return isShown ? (
+  return (
     <div className={styles.modalOverlay} onClick={closeModal}>
       <div className={styles.modalWrapper}>
         <div className={styles.modal}>
@@ -32,12 +33,23 @@ const Modal = ({ children, title }) => {
               Close
             </a>
           </div>
-          {title && <div className={styles.modalTitle}>{title}</div>}
-          <div className={styles.modalBody}>{children}</div>
+          <div className={styles.modalBody}>
+            <p className={styles.modalParagraph}>
+              {post.heroSection.leftSideParagraph}
+            </p>
+            <div className={styles.signMeUpWrapper}>
+            <SignMeUp
+              key={post.id}
+              post={post}
+              heading={post.heroSection.rightSideHeading}
+              paragraph={post.heroSection.emailInput}
+            ></SignMeUp>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  ) : null;
+  );
 };
 
 export default Modal;

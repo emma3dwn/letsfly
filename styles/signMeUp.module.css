@@ -1,0 +1,44 @@
+.signMeUpWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signMeUpHeading {
+  width: 285px;
+  padding-bottom: 20px;
+  line-height: 1.1;
+}
+
+.signMeUpBtn {
+  font-size: 16px;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  border: 3px solid white; 
+  border-radius: 30px;
+  width: 285px;
+  padding: 7px 70px 7px 70px;
+}
+
+.signMeUpBtn:hover {
+  color: #A0A1A1;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+/* MEDIA SCREENS */
+@media screen and (max-width: 912px) {
+  .signMeUpHeading {
+    font-size: 24px;
+    width: 119px;
+  }
+  
+  .signMeUpBtn {
+    font-size: 12px;
+    border: 2px solid white; 
+    margin-bottom: 20px;
+    padding: 5px 10px 5px 10px;
+  }
+}

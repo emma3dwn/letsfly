@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/hero.module.css'
+import SignMeUp from './SignMeUp'
 
 
 function Hero({ post }) {
@@ -14,12 +15,17 @@ function Hero({ post }) {
             <img className={styles.planeIllustrationDesktop} src={post.heroSection.planeIllustration.mediaItemUrl} alt='Plane Illustration' />
         </div>
 
-        {/* HERO-TEXT RIGHT SIDE */}
-        <div className={styles.heroTextContainerRight}>
-            <h2 className={styles.rightSideHeading}> {post.heroSection.rightSideHeading} </h2>
-            <h5 className={styles.rightSideParagraph}> {post.heroSection.emailInput} </h5>
-            <img className={styles.planeIllustrationMobile} src={post.heroSection.planeIllustration.mediaItemUrl} alt='Plane Illustration' />
+        <div className={styles.emailInputWrapper}>
+        <SignMeUp 
+                key={post.id} 
+                post={post}
+                heading={post.heroSection.rightSideHeading}
+                paragraph={post.heroSection.emailInput}
+          ></SignMeUp>
         </div>
+
+        {/* PLANE ILLUSTRATION MOBILE */}
+        <img className={styles.planeIllustrationMobile} src={post.heroSection.planeIllustration.mediaItemUrl} alt='Plane Illustration' />
         
       </div>
     </section>

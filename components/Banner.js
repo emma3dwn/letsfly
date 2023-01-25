@@ -5,8 +5,8 @@ function Banner(props) {
   return (
     <section className={styles.bannerSection}>
         <div className={styles.bannerTextSection}>
-            <p className={styles.bannerText}> {props.text} </p>
-        </div> 
+            <h3 className={styles.bannerText}> {props.text} </h3>
+        </div>  
     </section>
   )
 } 

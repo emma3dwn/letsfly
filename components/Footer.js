@@ -1,69 +1,91 @@
-import Link from 'next/link'
-import React from 'react'
-import styles from '../styles/footer.module.css'
+import Link from 'next/link';
+import React from 'react';
+import styles from '../styles/footer.module.css';
 
 function Footer({ post }) {
   return (
-  <>
-    <section className={styles.footerSectionWrapper}>
-      {/* LEFT SIDE */}
-      <div className={styles.footerLeftSide}>
-        {/* Logo */}
-        <div className={styles.footerLeftSideLogoContainer}>
-          <Link href='/'>
-            <img className={styles.footerLeftSideLogo} src={post.footer.footerLogo.mediaItemUrl} alt='Logo' />
+    <>
+      <section className={styles.footerSectionWrapper}>
+        {/* LEFT SIDE */}
+        <div className={styles.footerLeftSide}>
+          {/* Logo */}
+          <Link href="/">
+            <img
+              className={styles.footerLeftSideLogo}
+              src={post.footer.footerLogo.mediaItemUrl}
+              alt="Logo"
+            />
           </Link>
+
+          {/* First Links */}
+          <div className={styles.footerLeftSideLinksContainerOne}>
+            <Link className={styles.footerFirstLinks} href="#">
+              {post.footer.footerLinks.contactLink.title}
+            </Link>
+            <Link className={styles.footerFirstLinks} href="#">
+              {post.footer.footerLinks.aboutUsLink.title}
+            </Link>
+            <Link className={styles.footerFirstLinks} href="#">
+              {post.footer.footerLinks.faqLink.title}
+            </Link>
+          </div>
+
+          {/* Second Links */}
+          <div className={styles.footerLeftSideLinksContainerTwo}>
+            <Link className={styles.footerSecondLinks} href="#">
+              {post.footer.footerLinks.termsLink.title}
+            </Link>
+            <Link className={styles.footerSecondLinks} href="#">
+              {post.footer.footerLinks.privacyLink.title}
+            </Link>
+          </div>
         </div>
-        {/* First Links */}
-        <div className={styles.footerLeftSideLinksContainerOne}>
-          <Link className={styles.footerFirstLinks} href='#'>
-            {post.footer.footerLinks.contactLink.title}
-          </Link>
-          <Link className={styles.footerFirstLinks} href='#'>
-            {post.footer.footerLinks.aboutUsLink.title}
-          </Link>
-          <Link className={styles.footerFirstLinks} href='#'>
-            {post.footer.footerLinks.faqLink.title}
-          </Link>
+
+        {/* RIGHT SIDE */}
+        <div className={styles.footerRightSide}>
+          <p className={styles.footerRightSideFormTitle}>
+            {' '}
+            {post.footer.newsletterSignUp.newsletterSignUpText}{' '}
+          </p>
+          <p className={styles.footerRightSideFormInputField}>
+            {' '}
+            {post.footer.newsletterSignUp.newsletterSignUpEmailField}{' '}
+          </p>
+          <div className={styles.footerSmIconWrapper}>
+            <img
+              className={styles.footerSmIcon}
+              src={post.footer.socialIcons.socialIconLinkedin.mediaItemUrl}
+              alt="Linked in"
+            />
+            <img
+              className={styles.footerSmIcon}
+              src={post.footer.socialIcons.socialIconInstagram.mediaItemUrl}
+              alt="Instagram"
+            />
+            <img
+              className={styles.footerSmIcon}
+              src={post.footer.socialIcons.socialIconFacebook.mediaItemUrl}
+              alt="Facebook"
+            />
+          </div>
         </div>
-        {/* Second Links */}
-        <div className={styles.footerLeftSideLinksContainerTwo}>
-          <Link className={styles.footerSecondLinks} href='#'>
+      </section>
+
+      {/* FOOTER BOTTOM/COPYRIGHT */}
+      <div className={styles.footerCopyrightContainer}>
+        {/* Second Links Mobile */}
+        <div className={styles.footerLeftSideLinksContainerTwoMobile}>
+          <Link className={styles.footerSecondLinksMobile} href="#">
             {post.footer.footerLinks.termsLink.title}
           </Link>
-          <Link className={styles.footerSecondLinks} href='#'>
+          <Link className={styles.footerSecondLinksMobile} href="#">
             {post.footer.footerLinks.privacyLink.title}
           </Link>
         </div>
+        <p className={styles.footerCopyright}> {post.footer.copyright} </p>
       </div>
-
-      {/* RIGHT SIDE */}
-      <div className={styles.footerRightSide}>
-        <div className={styles.footerRightSideFormContainer}>
-          <div className={styles.footerRightSideFormTitleWrapper}>
-            <p className={styles.footerRightSideFormTitle}> {post.footer.newsletterSignUp.newsletterSignUpText} </p>
-          </div>
-          <div className={styles.footerRightSideFormInputFieldWrapper}>
-            {/* FORM - p-tag just for demo */}
-            <p className={styles.footerRightSideFormInputField}> {post.footer.newsletterSignUp.newsletterSignUpEmailField} </p>
-          </div>
-        </div>
-        <div className={styles.footerSmIconsContainer}>
-          <div className={styles.footerSmIcons}>
-            <img className={styles.footerSmIconLinkedin} src={post.footer.socialIcons.socialIconLinkedin.mediaItemUrl} alt='Linked in' />
-            <img className={styles.footerSmIconInstagram} src={post.footer.socialIcons.socialIconInstagram.mediaItemUrl} alt='Instagram' />
-            <img className={styles.footerSmIconFacebook} src={post.footer.socialIcons.socialIconFacebook.mediaItemUrl} alt='Facebook' />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* FOOTER BOTTOM/COPYRIGHT */}
-    <div className={styles.footerCopyrightContainer}>
-      <p className={styles.footerCopyright}> {post.footer.copyright} </p>
-    </div>
-  </>
-  )
+    </>
+  );
 }
 
-export default Footer
+export default Footer;
