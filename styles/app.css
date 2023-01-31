@@ -25,3 +25,7 @@ p {
     font-size: 16px;
     letter-spacing: 1px;
 }
+
+img {
+    filter: drop-shadow(15px 15px 20px rgba(0, 0, 0, 0.45));
+}

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from '../styles/footer.module.css';
+import Button from './Button'
+import Popup from './Popup'
 
 function Footer({ post }) {
   return (
@@ -44,13 +46,9 @@ function Footer({ post }) {
         {/* RIGHT SIDE */}
         <div className={styles.footerRightSide}>
           <p className={styles.footerRightSideFormTitle}>
-            {' '}
-            {post.footer.newsletterSignUp.newsletterSignUpText}{' '}
+            {post.footer.newsletterSignUp.newsletterSignUpText}
           </p>
-          <p className={styles.footerRightSideFormInputField}>
-            {' '}
-            {post.footer.newsletterSignUp.newsletterSignUpEmailField}{' '}
-          </p>
+          <Popup post={post}/>
           <div className={styles.footerSmIconWrapper}>
             <img
               className={styles.footerSmIcon}

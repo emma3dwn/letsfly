@@ -1,55 +1,54 @@
-import React, { useEffect, useState } from 'react';
-import styles from '../styles/popup.module.css';
-import SignMeUp from './SignMeUp';
+import React, { useState } from 'react';
+import modalStyles from '../styles/popup.module.css';
+import btnStyles from '../styles/button.module.css';
+import SignMeUpStyle from '../styles/signMeUp.module.css';
+import mobileNavStyle from '../styles/navbar.module.css';
 
-const Modal = ({ post }) => {
+const Popup = ({ post, inNav, inMobileNav }) => {
   const [isShown, setIsShown] = useState(false);
 
-  const showModal = () => {
-    setIsShown(true);
+  const toggleModal = () => {
+    setIsShown(!isShown);
   };
-
-  const closeModal = () => {
-    setIsShown(false);
-  };
-
-  /*   useEffect(() => {
-    if (!sessionStorage.popupModal) {
-      const timer = setTimeout(() => {
-        setIsShown(true);
-        sessionStorage.popupModal = 1;
-      }, 2000);
-
-      return () => clearTimeout(timer);
-    }
-  }, []); */
 
   return (
-    <div className={styles.modalOverlay} onClick={closeModal}>
-      <div className={styles.modalWrapper}>
-        <div className={styles.modal}>
-          <div className={styles.modalHeader}>
-            <a className={styles.closeClick} href="#" onClick={closeModal}>
-              Close
-            </a>
-          </div>
-          <div className={styles.modalBody}>
-            <p className={styles.modalParagraph}>
-              {post.heroSection.leftSideParagraph}
-            </p>
-            <div className={styles.signMeUpWrapper}>
-            <SignMeUp
-              key={post.id}
-              post={post}
-              heading={post.heroSection.rightSideHeading}
-              paragraph={post.heroSection.emailInput}
-            ></SignMeUp>
+    <div>
+      <button
+        className={inNav ? btnStyles.signMeUpBtnInNav : (inMobileNav ? mobileNavStyle.signMeUpMobileNavLink : btnStyles.signMeUpBtn)}
+        onClick={toggleModal}>
+        {inNav ? post.navbar.signUpButton : post.heroSection.emailInput }
+      </button>
+
+      {isShown ? (
+        <div className={modalStyles.modalOverlay} onClick={toggleModal}>
+          <div className={modalStyles.modalWrapper}>
+            <div className={modalStyles.modal}>
+              <div className={modalStyles.modalHeader}>
+                <a
+                  className={modalStyles.closeClick}
+                  href="#"
+                  onClick={toggleModal}
+                >
+                  Close
+                </a>
+              </div>
+              <div className={modalStyles.modalBody}>
+                <p className={modalStyles.modalParagraph}>
+                  {post.heroSection.leftSideParagraph}
+                </p>
+                <div className={SignMeUpStyle.signMeUpWrapper}>
+                  <h2 className={SignMeUpStyle.signMeUpHeading}>
+                    {' '}
+                    {post.heroSection.rightSideHeading}{' '}
+                  </h2>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 };
 
-export default Modal;
+export default Popup;

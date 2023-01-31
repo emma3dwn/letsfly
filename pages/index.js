@@ -5,7 +5,6 @@ import { gql } from '@apollo/client';
 
 import api from '../api/api';
 
-import Popup from '../components/Popup';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
@@ -19,11 +18,6 @@ import InfoSectionThree from '../components/InfoSectionThree';
 function Home({ posts }) {
   return (
     <div className="homeContainer">
-      <div className="popup">
-        {posts.map((post) => {
-          return <Popup key={post.id} post={post}></Popup>;
-        })}
-      </div>
 
       <Head>
         <title>Let's Fly</title>
@@ -34,17 +28,13 @@ function Home({ posts }) {
       <main>
         <div className="navbar">
           {posts.map((post) => {
-            return (
-            <Navbar key={post.id} post={post}></Navbar>
-            );
+            return <Navbar key={post.id} post={post}></Navbar>;
           })}
         </div>
 
         <div className="hero">
           {posts.map((post) => {
-            return (
-            <Hero key={post.id} post={post}></Hero>
-            );
+            return <Hero key={post.id} post={post}></Hero>;
           })}
         </div>
 
@@ -90,17 +80,13 @@ function Home({ posts }) {
 
         <div className="infoSectionOne">
           {posts.map((post) => {
-            return (
-              <InfoSectionOne key={post.id} post={post}></InfoSectionOne>
-            );
+            return <InfoSectionOne key={post.id} post={post}></InfoSectionOne>;
           })}
         </div>
 
         <div className="infoSectionTwo">
           {posts.map((post) => {
-            return (
-              <InfoSectionTwo key={post.id} post={post}></InfoSectionTwo>
-            );
+            return <InfoSectionTwo key={post.id} post={post}></InfoSectionTwo>;
           })}
         </div>
 
@@ -116,9 +102,7 @@ function Home({ posts }) {
       <footer>
         <div className="footer">
           {posts.map((post) => {
-            return (
-              <Footer key={post.id} post={post}></Footer>
-            );
+            return <Footer key={post.id} post={post}></Footer>;
           })}
         </div>
       </footer>

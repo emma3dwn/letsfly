@@ -1,6 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+@type {import('next').NextConfig}
 
-module.exports = nextConfig
+module.exports = {
+  assetPrefix: 'http://localhost:10004/wp-admin/',
+}
