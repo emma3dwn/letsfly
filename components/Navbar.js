@@ -35,12 +35,10 @@ function Navbar({ post }) {
         {/* NAVBAR DESKTOP LEFT SIDE */}
         <div className={styles.leftSideNavbar}>
           <Link href="/">
-            <Image
+            <img
               className={styles.navbarLogo}
               src={post.navbar.logo.mediaItemUrl}
               alt="Logo"
-              width={200}
-              height={200}
             />
           </Link>
           <Link href="#" className={styles.navLinks} onClick={toggleMenu}>

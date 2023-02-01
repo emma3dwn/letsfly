@@ -11,7 +11,7 @@
 }
 
 .imgScreenShot {
-    width: 450px;
+    width: 450px; 
 }
 
 .introSectionTitle {
@@ -50,5 +50,22 @@
         font-size: 12px;
         width: 295px;
         color: white;
+    }
+}
+
+/* EXTRA LARGE SCREEN */
+@media screen and (min-width: 1900px) {
+    .imgScreenShot {
+        width: 560px; 
+    }   
+    
+    .introSectionTitle {
+        font-size: 82px;
+        width: 610px;
+    }
+    
+    .introSectionParagraph {
+        font-size: 20px;
+        width: 610px;
     }
 }

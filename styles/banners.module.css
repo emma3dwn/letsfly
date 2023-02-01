@@ -30,3 +30,14 @@
         height: 120px;
     }
 }
+
+/* EXTRA LARGE SCREEN */
+@media screen and (min-width: 1900px) {
+    .bannerText {
+        font-size: 49px;
+    }
+
+    .bannerSection {
+        height: 260px;
+    }
+}
