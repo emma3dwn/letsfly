@@ -14,7 +14,7 @@
 }
 
 .imgScreenShot {
-    width: 450px;
+    width: 450px; 
 }
 
 .infoSectionTextContainer {
@@ -57,5 +57,24 @@
     
     .infoSectionParagraph {
         font-size: 12px;
+    }
+}
+
+/* EXTRA LARGE SCREEN */
+@media screen and (min-width: 1900px) {
+    .imgScreenShot {
+        width: 590px;
+    }
+
+    .infoSectionTextContainer {
+        width: 640px;
+    }
+
+    .infoSectionTitle {
+        font-size: 82px;
+    }
+    
+    .infoSectionParagraph {
+        font-size: 20px;
     }
 }

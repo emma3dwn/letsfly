@@ -11,18 +11,26 @@
 }
 
 
-/* MEDIA SCREENS */
+/* MEDIA SCREENS */ 
 @media screen and (max-width: 912px) {
   .signMeUpHeading {
     font-size: 24px;
     width: 119px;
   }
   
-  .signMeUpBtn {
+/*   .signMeUpBtn {
     font-size: 12px;
     border: 2px solid white; 
     width: auto;
     margin-bottom: 20px;
     padding: 5px 10px 5px 10px;
+  } */
+}
+
+/* EXTRA LARGE SCREEN */
+@media screen and (min-width: 1900px) {
+  .signMeUpHeading {
+    font-size: 82px;
+    width: 355px;
   }
 }

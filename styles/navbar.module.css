@@ -28,7 +28,7 @@
 .leftSideNavbar {
   display: flex;
   align-items: center;
-  padding-left: 60px;
+  padding-left: 60px; 
   gap: 1.5rem;
 }
 
@@ -109,4 +109,15 @@
     font-weight: 600;
     letter-spacing: 1px;
   }
+}
+
+/* EXTRA LARGE SCREEN */
+@media screen and (min-width: 1900px) {
+  .navbarLogo {
+    width: 320px;
+  }
+
+  .navLinks {
+  font-size: 18px;
+}
 }
