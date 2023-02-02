@@ -1,11 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from '../styles/navbar.module.css';
-import { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import Button from './Button';
-import Popup from './Popup';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "../styles/navbar.module.css";
+import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import Button from "./Button";
+import Popup from "./Popup";
 
 function Navbar({ post }) {
   {
@@ -19,8 +19,8 @@ function Navbar({ post }) {
       window.scrollY >= 100 ? setColorChange(true) : setColorChange(false);
     };
 
-    window.addEventListener('scroll', changeNavbarColor);
-    return () => window.removeEventListener('scroll', changeNavbarColor);
+    window.addEventListener("scroll", changeNavbarColor);
+    return () => window.removeEventListener("scroll", changeNavbarColor);
   }, []);
 
   const toggleMenu = () => {
@@ -35,12 +35,10 @@ function Navbar({ post }) {
         {/* NAVBAR DESKTOP LEFT SIDE */}
         <div className={styles.leftSideNavbar}>
           <Link href="/">
-            <Image
+            <img
               className={styles.navbarLogo}
               src={post.navbar.logo.mediaItemUrl}
               alt="Logo"
-              width={200}
-              height={200}
             />
           </Link>
           <Link href="#" className={styles.navLinks} onClick={toggleMenu}>

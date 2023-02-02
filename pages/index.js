@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import { client } from '../lib/apollo';
-import { gql } from '@apollo/client';
+import React, { useState } from "react";
+import Head from "next/head";
+import { client } from "../lib/apollo";
+import { gql } from "@apollo/client";
 
-import api from '../api/api';
+import api from "../api/api";
 
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Footer from '../components/Footer';
-import Banner from '../components/Banner';
-import IntroImgLeftSide from '../components/IntroImgLeftSide';
-import IntroImgRightSide from '../components/IntroImgRightSide';
-import InfoSectionOne from '../components/InfoSectionOne';
-import InfoSectionTwo from '../components/InfoSectionTwo';
-import InfoSectionThree from '../components/InfoSectionThree';
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import Banner from "../components/Banner";
+import IntroImgLeftSide from "../components/IntroImgLeftSide";
+import IntroImgRightSide from "../components/IntroImgRightSide";
+import InfoSectionOne from "../components/InfoSectionOne";
+import InfoSectionTwo from "../components/InfoSectionTwo";
+import InfoSectionThree from "../components/InfoSectionThree";
 
 function Home({ posts }) {
   return (
     <div className="homeContainer">
-
       <Head>
         <title>Let's Fly</title>
         <meta name="description" content="Let's fly" />
