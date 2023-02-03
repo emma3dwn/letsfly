@@ -1,6 +1,6 @@
 // @type {import('next').NextConfig}
 
-module.exports = {
+/*module.exports = {
   images: {
     remotePatterns: [
       {
@@ -8,6 +8,21 @@ module.exports = {
 
         hostname: "localhost",
         port: "10009",
+        pathname: "/**",
+      },
+    ],
+  },
+};
+*/
+
+module.exports = {
+  images: {
+    //unoptimized: false,
+    //formats: ["image/webp"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "172.16.1.67",
         pathname: "/**",
       },
     ],
