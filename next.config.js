@@ -1,5 +1,21 @@
-/* @type {import('next').NextConfig}
+
+
+
+@type {import('next').NextConfig}
 
 module.exports = {
-  assetPrefix: 'http://localhost:10004/wp-admin/',
-} */
+  images: {
+    //unoptimized: false,
+    //formats: ["image/webp"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "172.16.1.67",
+        pathname: "/**",
+      },
+    ],
+  },
+};
+
+
+

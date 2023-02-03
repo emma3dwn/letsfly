@@ -20,5 +20,20 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-spring": "^9.6.1"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emma3dwn/letsfly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emma3dwn/letsfly/issues"
+  },
+  "homepage": "https://github.com/emma3dwn/letsfly#readme"
 }
