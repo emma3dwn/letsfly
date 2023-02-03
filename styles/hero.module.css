@@ -98,3 +98,21 @@
     margin: 0px;
   }
 }
+
+/* EXTRA LARGE SCREEN */
+@media screen and (min-width: 1900px) {
+  .leftSideHeading {
+    font-size: 147px;
+    width: 750px;
+  }
+  
+  .leftSideParagraph {
+    font-size: 36px;
+    width: 770px;
+    color: white;
+  }
+  
+  .planeIllustrationDesktop {
+     width: 770px;
+  }
+}
