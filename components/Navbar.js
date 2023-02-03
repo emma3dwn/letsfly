@@ -26,7 +26,7 @@ function Navbar({ post }) {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  console.log(post);
   return (
     <header>
       <nav
@@ -35,10 +35,13 @@ function Navbar({ post }) {
         {/* NAVBAR DESKTOP LEFT SIDE */}
         <div className={styles.leftSideNavbar}>
           <Link href="/">
-            <img
+            <Image
               className={styles.navbarLogo}
               src={post.navbar.logo.mediaItemUrl}
               alt="Logo"
+              width={256}
+              height={40}
+              quality={75}
             />
           </Link>
           <Link href="#" className={styles.navLinks} onClick={toggleMenu}>
