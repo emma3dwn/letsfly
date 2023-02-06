@@ -39,18 +39,9 @@ function Navbar({ post }) {
               className={styles.navbarLogo}
               src={post.navbar.logo.mediaItemUrl}
               alt="Logo"
-<<<<<<< HEAD
-<<<<<<< HEAD
-              width={256}
-              height={40}
+              width={350}
+              height={50}
               quality={75}
-=======
->>>>>>> origin/main
-=======
-              width={256}
-              height={40}
-              quality={75}
->>>>>>> 18aeff7 (update)
             />
           </Link>
           <Link href="#" className={styles.navLinks} onClick={toggleMenu}>

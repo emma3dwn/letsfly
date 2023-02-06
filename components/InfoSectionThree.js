@@ -1,16 +1,19 @@
-import React from 'react';
-import styles from '../styles/infoSectionThree.module.css';
+import React from "react";
+import styles from "../styles/infoSectionThree.module.css";
+import Image from "next/image";
 
 export default function InfoSectionThree({ post }) {
   return (
     <section className={styles.infoSectionWrapper}>
       <div className={styles.infoSection}>
-        <img
+        <Image
           className={styles.imgScreenShot}
           src={post.infoSection.infoSectionImgThree.mediaItemUrl}
           alt="Info Section Image Three"
+          width={100}
+          height={100}
         />
-        
+
         <div className={styles.infoSectionTextContainer}>
           <ol className={styles.textFieldContainer}>
             <li className={styles.textFieldText}>

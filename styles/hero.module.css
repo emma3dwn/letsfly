@@ -1,5 +1,5 @@
 .heroSection {
-  background: url('../public/assets/hero_img.png');
+  background: url("../public/assets/hero_img.png");
   display: flex;
   height: 100vh;
   background-repeat: no-repeat;
@@ -7,7 +7,7 @@
   background-position: center center;
 }
 
-.heroTextWrapper { 
+.heroTextWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,11 +35,12 @@
 }
 
 .planeIllustrationDesktop {
-   width: 520px;
+  width: 520px;
+  height: auto;
 }
 
 .planeIllustrationMobile {
-    display: none;
+  display: none;
 }
 
 .emailInputWrapper {
@@ -79,7 +80,6 @@
   .leftSideParagraph {
     font-size: 16px;
     width: 332px;
-    
   }
 
   /* PLANE ILLUSTRATION */
@@ -90,6 +90,7 @@
   .planeIllustrationMobile {
     display: inline;
     width: 85%;
+    height: auto;
     padding: 20px;
   }
 
@@ -105,14 +106,14 @@
     font-size: 147px;
     width: 750px;
   }
-  
+
   .leftSideParagraph {
     font-size: 36px;
     width: 770px;
     color: white;
   }
-  
+
   .planeIllustrationDesktop {
-     width: 770px;
+    width: 770px;
   }
 }

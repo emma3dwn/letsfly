@@ -1,8 +1,9 @@
-import Link from 'next/link';
-import React from 'react';
-import styles from '../styles/footer.module.css';
-import Button from './Button'
-import Popup from './Popup'
+import Link from "next/link";
+import React from "react";
+import styles from "../styles/footer.module.css";
+import Button from "./Button";
+import Popup from "./Popup";
+import Image from "next/image";
 
 function Footer({ post }) {
   return (
@@ -12,10 +13,13 @@ function Footer({ post }) {
         <div className={styles.footerLeftSide}>
           {/* Logo */}
           <Link href="/">
-            <img
+            <Image
               className={styles.footerLeftSideLogo}
               src={post.footer.footerLogo.mediaItemUrl}
               alt="Logo"
+              width={100}
+              height={100}
+              quality={75}
             />
           </Link>
 
@@ -48,22 +52,30 @@ function Footer({ post }) {
           <p className={styles.footerRightSideFormTitle}>
             {post.footer.newsletterSignUp.newsletterSignUpText}
           </p>
-          <Popup post={post}/>
+          <Popup post={post} />
           <div className={styles.footerSmIconWrapper}>
-            <img
+            <Image
               className={styles.footerSmIcon}
               src={post.footer.socialIcons.socialIconLinkedin.mediaItemUrl}
               alt="Linked in"
+              width={100}
+              height={100}
+              quality={75}
             />
-            <img
+            <Image
               className={styles.footerSmIcon}
               src={post.footer.socialIcons.socialIconInstagram.mediaItemUrl}
               alt="Instagram"
+              width={100}
+              height={100}
             />
-            <img
+            <Image
               className={styles.footerSmIcon}
               src={post.footer.socialIcons.socialIconFacebook.mediaItemUrl}
               alt="Facebook"
+              width={100}
+              height={100}
+              quality={75}
             />
           </div>
         </div>
