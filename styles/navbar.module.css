@@ -12,7 +12,7 @@
 }
 
 .navbarWrapperBg {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.95);
   position: fixed;
   display: flex;
   width: 100%;
@@ -66,7 +66,7 @@
 /* EXTRA LARGE SCREEN */
 @media screen and (min-width: 1900px) {
   .navbarLogo {
-    width: 220px;
+    width: 250px;
     height: auto;
   }
 
