@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from '../styles/signMeUp.module.css';
-import Popup from './Popup';
+import React from "react";
+import styles from "../styles/signMeUp.module.css";
+import Popup from "./Popup";
 
 function SignMeUp({ post }) {
   return (

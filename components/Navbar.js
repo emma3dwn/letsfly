@@ -37,7 +37,7 @@ function Navbar({ post }) {
           <Link href="/">
             <Image
               className={styles.navbarLogo}
-              src={post.logo.mediaItemUrl}
+              src={post.navbar.logo.mediaItemUrl}
               alt="Logo"
               width={350}
               height={50}
@@ -45,10 +45,10 @@ function Navbar({ post }) {
             />
           </Link>
           <Link href="#" className={styles.navLinks} onClick={toggleMenu}>
-            {post.blogLink}
+            {post.navbar.blogLink}
           </Link>
           <Link href="#" className={styles.navLinks} onClick={toggleMenu}>
-            {post.contactLink}
+            {post.navbar.contactLink}
           </Link>
         </div>
 
@@ -58,7 +58,7 @@ function Navbar({ post }) {
           <Button
             key={post.id}
             post={post}
-            text={post.downloadAppButton}
+            text={post.navbar.downloadAppButton}
           ></Button>
         </div>
 
@@ -76,20 +76,20 @@ function Navbar({ post }) {
               className={styles.mobileNavLink}
               onClick={toggleMenu}
             >
-              {post.blogLink}
+              {post.navbar.blogLink}
             </Link>
             <Link
               href="#"
               className={styles.mobileNavLink}
               onClick={toggleMenu}
             >
-              {post.contactLink}
+              {post.navbar.contactLink}
             </Link>
             <Popup post={post} inNav={true} inMobileNav={true} />
             <Button
               key={post.id}
               post={post}
-              text={post.downloadAppButton}
+              text={post.navbar.downloadAppButton}
               inMobileNav={true}
             ></Button>
           </div>

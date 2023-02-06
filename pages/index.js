@@ -28,7 +28,7 @@ function Home({ posts }) {
         <div className="navbar">
           {posts.map((post, index) => {
             console.log(post);
-            return <Navbar key={`navbar${index}`} post={post.navbar}></Navbar>;
+            return <Navbar key={`navbar${index}`} post={post}></Navbar>;
           })}
         </div>
 

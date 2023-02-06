@@ -23,7 +23,7 @@ const Popup = ({ post, inNav, inMobileNav }) => {
         }
         onClick={toggleModal}
       >
-        {inNav ? post.signUpButton : post.heroSection.emailInput}
+        {inNav ? post.navbar.signUpButton : post.heroSection.emailInput}
       </button>
 
       {isShown ? (
