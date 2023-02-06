@@ -26,22 +26,23 @@ function Home({ posts }) {
 
       <main>
         <div className="navbar">
-          {posts.map((post) => {
-            return <Navbar key={post.id} post={post}></Navbar>;
+          {posts.map((post, index) => {
+            console.log(post);
+            return <Navbar key={`navbar${index}`} post={post.navbar}></Navbar>;
           })}
         </div>
 
         <div className="hero">
-          {posts.map((post) => {
-            return <Hero key={post.id} post={post}></Hero>;
+          {posts.map((post, index) => {
+            return <Hero key={`hero${index}`} post={post}></Hero>;
           })}
         </div>
 
         <div className="bannerOne">
-          {posts.map((post) => {
+          {posts.map((post, index) => {
             return (
               <Banner
-                key={post.id}
+                key={`banner1${index}`}
                 post={post}
                 text={post.banners.bannerOne}
               ></Banner>
@@ -50,26 +51,32 @@ function Home({ posts }) {
         </div>
 
         <div className="introImgLeftSide">
-          {posts.map((post) => {
+          {posts.map((post, index) => {
             return (
-              <IntroImgLeftSide key={post.id} post={post}></IntroImgLeftSide>
+              <IntroImgLeftSide
+                key={`introleft${index}`}
+                post={post}
+              ></IntroImgLeftSide>
             );
           })}
         </div>
 
         <div className="introImgRightSide">
-          {posts.map((post) => {
+          {posts.map((post, index) => {
             return (
-              <IntroImgRightSide key={post.id} post={post}></IntroImgRightSide>
+              <IntroImgRightSide
+                key={`introright${index}`}
+                post={post}
+              ></IntroImgRightSide>
             );
           })}
         </div>
 
         <div className="bannerTwo">
-          {posts.map((post) => {
+          {posts.map((post, index) => {
             return (
               <Banner
-                key={post.id}
+                key={`banner2${index}`}
                 post={post}
                 text={post.banners.bannerTwo}
               ></Banner>
@@ -78,21 +85,34 @@ function Home({ posts }) {
         </div>
 
         <div className="infoSectionOne">
-          {posts.map((post) => {
-            return <InfoSectionOne key={post.id} post={post}></InfoSectionOne>;
+          {posts.map((post, index) => {
+            return (
+              <InfoSectionOne
+                key={`sectionone${index}`}
+                post={post}
+              ></InfoSectionOne>
+            );
           })}
         </div>
 
         <div className="infoSectionTwo">
-          {posts.map((post) => {
-            return <InfoSectionTwo key={post.id} post={post}></InfoSectionTwo>;
+          {posts.map((post, index) => {
+            return (
+              <InfoSectionTwo
+                key={`section2${index}`}
+                post={post}
+              ></InfoSectionTwo>
+            );
           })}
         </div>
 
         <div className="infoSectionThree">
-          {posts.map((post) => {
+          {posts.map((post, index) => {
             return (
-              <InfoSectionThree key={post.id} post={post}></InfoSectionThree>
+              <InfoSectionThree
+                key={`section3${index}`}
+                post={post}
+              ></InfoSectionThree>
             );
           })}
         </div>
@@ -100,8 +120,8 @@ function Home({ posts }) {
 
       <footer>
         <div className="footer">
-          {posts.map((post) => {
-            return <Footer key={post.id} post={post}></Footer>;
+          {posts.map((post, index) => {
+            return <Footer key={`footer${index}`} post={post}></Footer>;
           })}
         </div>
       </footer>
