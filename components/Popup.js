@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import modalStyles from '../styles/popup.module.css';
-import btnStyles from '../styles/button.module.css';
-import SignMeUpStyle from '../styles/signMeUp.module.css';
-import mobileNavStyle from '../styles/navbar.module.css';
+import React, { useState } from "react";
+import modalStyles from "../styles/popup.module.css";
+import btnStyles from "../styles/button.module.css";
+import SignMeUpStyle from "../styles/signMeUp.module.css";
+import mobileNavStyle from "../styles/navbar.module.css";
 
 const Popup = ({ post, inNav, inMobileNav }) => {
   const [isShown, setIsShown] = useState(false);
@@ -14,9 +14,16 @@ const Popup = ({ post, inNav, inMobileNav }) => {
   return (
     <div>
       <button
-        className={inNav ? btnStyles.signMeUpBtnInNav : (inMobileNav ? mobileNavStyle.signMeUpMobileNavLink : btnStyles.signMeUpBtn)}
-        onClick={toggleModal}>
-        {inNav ? post.navbar.signUpButton : post.heroSection.emailInput }
+        className={
+          inNav
+            ? btnStyles.signMeUpBtnInNav
+            : inMobileNav
+            ? mobileNavStyle.signMeUpMobileNavLink
+            : btnStyles.signMeUpBtn
+        }
+        onClick={toggleModal}
+      >
+        {inNav ? post.signUpButton : post.heroSection.emailInput}
       </button>
 
       {isShown ? (
@@ -38,8 +45,8 @@ const Popup = ({ post, inNav, inMobileNav }) => {
                 </p>
                 <div className={SignMeUpStyle.signMeUpWrapper}>
                   <h2 className={SignMeUpStyle.signMeUpHeading}>
-                    {' '}
-                    {post.heroSection.rightSideHeading}{' '}
+                    {" "}
+                    {post.heroSection.rightSideHeading}{" "}
                   </h2>
                 </div>
               </div>
