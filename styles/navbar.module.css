@@ -1,3 +1,4 @@
+/* DESKTOP */
 .navbarWrapper {
   position: fixed;
   display: flex;
@@ -63,20 +64,58 @@
   display: none;
 }
 
-/* EXTRA LARGE SCREEN */
-@media screen and (min-width: 1900px) {
+/* MOBILE DEVICES */
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .rightSideNavbar {
+    display: none;
+  }
+
   .navbarLogo {
-    width: 250px;
+    width: 10em;
     height: auto;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 1.5em;
+    z-index: 3;
+  }
+
+  .mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    gap: 1.5rem;
+    z-index: 2;
   }
 
   .navLinks {
-    font-size: 20px;
+    display: none;
+  }
+
+  .mobileNavLink {
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
   }
 }
 
-/* MEDIA SCREENS */
-@media screen and (max-width: 912px) {
+/* TABLET DEVICES */
+@media screen and (min-width: 601px) and (max-width: 900px) {
   .rightSideNavbar {
     display: none;
   }
@@ -122,5 +161,17 @@
     color: white;
     font-weight: 600;
     letter-spacing: 1px;
+  }
+}
+
+/* WIDE SCREEN DESKTOP */
+@media screen and (min-width: 1536px) {
+  .navbarLogo {
+    width: 250px;
+    height: auto;
+  }
+
+  .navLinks {
+    font-size: 20px;
   }
 }
