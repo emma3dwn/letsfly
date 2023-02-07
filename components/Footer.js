@@ -17,8 +17,8 @@ function Footer({ post }) {
               className={styles.footerLeftSideLogo}
               src={post.footer.footerLogo.mediaItemUrl}
               alt="Logo"
-              width={100}
-              height={100}
+              width={355}
+              height={55}
               quality={75}
             />
           </Link>

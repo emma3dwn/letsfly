@@ -10,8 +10,8 @@ function infoSectionOne({ post }) {
           className={styles.imgScreenShot}
           src={post.infoSection.infoSectionImgOne.mediaItemUrl}
           alt="Info Section Image One"
-          width={100}
-          height={100}
+          width={786}
+          height={860}
         />
         <div className={styles.infoSectionTextContainer}>
           <h2 className={styles.infoSectionTitle}>

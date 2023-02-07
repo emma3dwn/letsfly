@@ -10,8 +10,8 @@ export default function InfoSectionThree({ post }) {
           className={styles.imgScreenShot}
           src={post.infoSection.infoSectionImgThree.mediaItemUrl}
           alt="Info Section Image Three"
-          width={100}
-          height={100}
+          width={726}
+          height={860}
         />
 
         <div className={styles.infoSectionTextContainer}>

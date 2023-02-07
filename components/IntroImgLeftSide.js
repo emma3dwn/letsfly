@@ -10,8 +10,8 @@ function IntroImgLeftSide({ post }) {
           className={styles.imgScreenShot}
           src={post.introSection.introSectionImgOne.mediaItemUrl}
           alt="Intro Section Image One"
-          width={100}
-          height={100}
+          width={442}
+          height={868}
         />
         <div className={styles.introSectionTextContainer}>
           <h2 className={styles.introSectionTitle}>
