@@ -1,7 +1,4 @@
-
-
-
-@type {import('next').NextConfig}
+require('dotenv').config()
 
 module.exports = {
   images: {
@@ -10,7 +7,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "172.16.1.67",
+        hostname: process.env.HOST,
         pathname: "/**",
       },
     ],
