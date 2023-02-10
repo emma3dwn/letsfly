@@ -1,8 +1,3 @@
-
-
-
-@type {import('next').NextConfig}
-
 module.exports = {
   images: {
     //unoptimized: false,
@@ -10,7 +5,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "172.16.1.67",
+        hostname: "192.168.0.28",
         pathname: "/**",
       },
     ],
