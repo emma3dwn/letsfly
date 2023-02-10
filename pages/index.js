@@ -3,7 +3,7 @@ import Head from "next/head";
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
 
-import api from "../api/api";
+/* import api from "../api/api"; */
 
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";

@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   images: {
     //unoptimized: false,
@@ -5,7 +7,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "192.168.0.28",
+        hostname: process.env.HOST,
         pathname: "/**",
       },
     ],

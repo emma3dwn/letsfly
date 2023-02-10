@@ -12,6 +12,7 @@
     "@apollo/client": "^3.7.2",
     "@next/font": "13.0.7",
     "@react-spring/web": "^9.6.1",
+    "dotenv": "^16.0.3",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
     "graphql": "^16.6.0",
