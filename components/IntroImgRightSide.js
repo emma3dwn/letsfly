@@ -1,25 +1,19 @@
 import React from "react";
-import styles from "../styles/introImgRightSide.module.css";
 import Image from "next/image";
 
 function IntroImgRightSide({ post }) {
   return (
-    <section className={styles.introSectionWrapper}>
-      <div className={styles.introSection}>
+    <section>
+      <div>
         <Image
-          className={styles.imgScreenShot}
           src={post.introSection.introSectionImgTwo.mediaItemUrl}
           alt="Intro Section Image Two"
           width={764}
           height={860}
         />
-        <div className={styles.introSectionTextContainer}>
-          <h2 className={styles.introSectionTitle}>
-            {post.introSection.introSectionHeadingTwo}
-          </h2>
-          <p className={styles.introSectionParagraph}>
-            {post.introSection.introSectionTextTwo}
-          </p>
+        <div>
+          <h2>{post.introSection.introSectionHeadingTwo}</h2>
+          <p>{post.introSection.introSectionTextTwo}</p>
         </div>
       </div>
     </section>
