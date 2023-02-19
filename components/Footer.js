@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import styles from "../styles/footer.module.css";
+//import styles from "../styles/footer.module.css";
 import Button from "./Button";
 import Popup from "./Popup";
 import Image from "next/image";
