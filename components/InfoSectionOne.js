@@ -1,25 +1,20 @@
 import React from "react";
-import styles from "../styles/infoSectionOne.module.css";
+
 import Image from "next/image";
 
 function infoSectionOne({ post }) {
   return (
-    <section className={styles.infoSectionWrapper}>
-      <div className={styles.infoSection}>
+    <section>
+      <div>
         <Image
-          className={styles.imgScreenShot}
           src={post.infoSection.infoSectionImgOne.mediaItemUrl}
           alt="Info Section Image One"
           width={786}
           height={860}
         />
-        <div className={styles.infoSectionTextContainer}>
-          <h2 className={styles.infoSectionTitle}>
-            {post.infoSection.infoSectionHeadingOne}
-          </h2>
-          <p className={styles.infoSectionParagraph}>
-            {post.infoSection.infoSectionTextOne}
-          </p>
+        <div>
+          <h2>{post.infoSection.infoSectionHeadingOne}</h2>
+          <p>{post.infoSection.infoSectionTextOne}</p>
         </div>
       </div>
     </section>
