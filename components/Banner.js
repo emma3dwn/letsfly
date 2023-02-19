@@ -1,14 +1,11 @@
-import React from 'react'
-import styles from '../styles/banners.module.css'
+import React from "react";
 
 function Banner(props) {
   return (
-    <section className={styles.bannerSection}>
-        <div className={styles.bannerTextSection}>
-            <h3 className={styles.bannerText}> {props.text} </h3>
-        </div>  
+    <section className="bg-black py-16 text-4xl flex  items-center justify-center">
+      <h3 className="w-1/2  text-white text-center"> {props.text}</h3>
     </section>
-  )
-} 
+  );
+}
 
-export default Banner
+export default Banner;
