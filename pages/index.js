@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
 
@@ -17,7 +18,7 @@ import InfoSectionThree from "../components/InfoSectionThree";
 
 function Home({ posts }) {
   return (
-    <div className="homeContainer">
+    <div>
       <Head>
         <title>Let's Fly</title>
         <meta name="description" content="Let's fly" />
@@ -25,14 +26,13 @@ function Home({ posts }) {
       </Head>
 
       <main>
-        <div className="navbar">
+        <div className="z-30 fixed">
           {posts.map((post, index) => {
-            console.log(post);
             return <Navbar key={`navbar${index}`} post={post}></Navbar>;
           })}
         </div>
 
-        <div className="hero">
+        <div>
           {posts.map((post, index) => {
             return <Hero key={`hero${index}`} post={post}></Hero>;
           })}
