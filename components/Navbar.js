@@ -1,11 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "./Button";
 import Popup from "./Popup";
-const styles = {};
 
 function Navbar({ post }) {
   {
@@ -35,37 +34,55 @@ function Navbar({ post }) {
   }
   return (
     <header>
-      <nav className={`fixed top-0 w-full ${bgColor} text-white ${textColor}`}>
+      <nav
+        className={`fixed top-0 w-full p-5 ${bgColor} text-white ${textColor}`}
+      >
         {/* NAVBAR MOBILE  */}
-        <div className="sm:block md:block lg:hidden">
-          <div className="flex flex-row gap-2 p-4 items-center">
+        <div className="sm:block  md:hidden">
+          <div className="flex flex-row  gap-5 items-center">
             <Link href="/">
-              <Image
-                className="aspect-auto w-full"
+              <img
+                className="w-2/3 aspect-auto"
                 src={post.navbar.logo.mediaItemUrl}
                 alt="Logo"
-                width={175}
-                height={25}
-                quality={75}
               />
             </Link>
 
             <div className="flex-grow"></div>
-            <Button>=</Button>
+            <Button>
+              {/* Hamburger Toggle menu */}
+              <div className="" onClick={toggleMenu}>
+                {isOpen ? <FaTimes /> : <FaBars />}
+              </div>
+              {isOpen && (
+                <div className="flex flex-row">
+                  <Link href="#" className="" onClick={toggleMenu}>
+                    {post.navbar.blogLink}
+                  </Link>
+                  <Link href="#" className="" onClick={toggleMenu}>
+                    {post.navbar.contactLink}
+                  </Link>
+                  <Popup post={post} inNav={true} inMobileNav={true} />
+                  <Button
+                    key={post.id}
+                    post={post}
+                    text={post.navbar.downloadAppButton}
+                    inMobileNav={true}
+                  ></Button>
+                </div>
+              )}
+            </Button>
           </div>
         </div>
 
         {/* NAVBAR REST  */}
-        <div className="hidden lg:block px-16">
-          <div className="flex flex-row items-center gap-8 p-4 ">
+        <div className=" hidden md:block">
+          <div className="container mx-auto flex flex-row items-center gap-5 ">
             <Link href="/">
-              <Image
-                className="aspect-auto w-full"
+              <img
+                className="aspect-auto  w-64"
                 src={post.navbar.logo.mediaItemUrl}
                 alt="Logo"
-                width={233}
-                height={33}
-                quality={75}
               />
             </Link>
 
