@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import { client } from "../lib/apollo";
-import { gql } from "@apollo/client";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import { client } from '../lib/apollo';
+import { gql } from '@apollo/client';
 
 /* import api from "../api/api"; */
 
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
-import Banner from "../components/Banner";
-import IntroImgLeftSide from "../components/IntroImgLeftSide";
-import IntroImgRightSide from "../components/IntroImgRightSide";
-import InfoSectionOne from "../components/InfoSectionOne";
-import InfoSectionTwo from "../components/InfoSectionTwo";
-import InfoSectionThree from "../components/InfoSectionThree";
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Footer from '../components/Footer';
+import Banner from '../components/Banner';
+import IntroImgLeftSide from '../components/IntroImgLeftSide';
+import IntroImgRightSide from '../components/IntroImgRightSide';
+import InfoSectionOne from '../components/InfoSectionOne';
+import InfoSectionTwo from '../components/InfoSectionTwo';
+import InfoSectionThree from '../components/InfoSectionThree';
 
 function Home({ posts }) {
   return (
@@ -25,77 +25,48 @@ function Home({ posts }) {
       </Head>
 
       <main>
-        <div className="navbar">
-          {posts.map((post) => {
-            return <Navbar key={post.id} post={post}></Navbar>;
-          })}
-        </div>
+        {posts.map((post) => {
+          return (
+            <div key={post.id}>
+              <div className="navbar">
+                <Navbar post={post}></Navbar>
+              </div>
 
-        <div className="hero">
-          {posts.map((post) => {
-            return <Hero key={post.id} post={post}></Hero>;
-          })}
-        </div>
+              <div className="hero">
+                <Hero post={post}></Hero>
+              </div>
 
-        <div className="bannerOne">
-          {posts.map((post) => {
-            return (
-              <Banner
-                key={post.id}
-                post={post}
-                text={post.banners.bannerOne}
-              ></Banner>
-            );
-          })}
-        </div>
+              <div className="bannerOne">
+                <Banner post={post} text={post.banners.bannerOne}></Banner>
+              </div>
 
-        <div className="introImgLeftSide">
-          {posts.map((post) => {
-            return (
-              <IntroImgLeftSide key={post.id} post={post}></IntroImgLeftSide>
-            );
-          })}
-        </div>
+              <div className="introImgLeftSide">
+                <IntroImgLeftSide post={post}></IntroImgLeftSide>
+              </div>
 
-        <div className="introImgRightSide">
-          {posts.map((post) => {
-            return (
-              <IntroImgRightSide key={post.id} post={post}></IntroImgRightSide>
-            );
-          })}
-        </div>
+              <div className="introImgRightSide">
+                <IntroImgRightSide post={post}></IntroImgRightSide>
+              </div>
 
-        <div className="bannerTwo">
-          {posts.map((post) => {
-            return (
-              <Banner
-                key={post.id}
-                post={post}
-                text={post.banners.bannerTwo}
-              ></Banner>
-            );
-          })}
-        </div>
+              <div className="bannerTwo">
+                <Banner post={post} text={post.banners.bannerTwo}></Banner>
+              </div>
 
-        <div className="infoSectionOne">
-          {posts.map((post) => {
-            return <InfoSectionOne key={post.id} post={post}></InfoSectionOne>;
-          })}
-        </div>
+              <div className="infoSectionOne">
+                <InfoSectionOne key={post.id} post={post}></InfoSectionOne>
+              </div>
 
-        <div className="infoSectionTwo">
-          {posts.map((post) => {
-            return <InfoSectionTwo key={post.id} post={post}></InfoSectionTwo>;
-          })}
-        </div>
+              <div className="infoSectionTwo">
+                <InfoSectionTwo key={post.id} post={post}></InfoSectionTwo>
+              </div>
 
-        <div className="infoSectionThree">
-          {posts.map((post) => {
-            return (
-              <InfoSectionThree key={post.id} post={post}></InfoSectionThree>
-            );
-          })}
-        </div>
+              <div className="infoSectionThree">
+                <InfoSectionThree key={post.id} post={post}></InfoSectionThree>
+              </div>
+
+            </div>
+          );
+        })}
       </main>
 
       <footer>
@@ -105,6 +76,7 @@ function Home({ posts }) {
           })}
         </div>
       </footer>
+      
     </div>
   );
 }
