@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
-
-import api from "../api/api";
 
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
@@ -21,11 +18,9 @@ function Home({ posts }) {
     <div>
       <Head>
         <title>Let's Fly</title>
-        <meta name="description" content="Let's fly" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className=" font-sans">
         <div className="z-30 fixed">
           {posts.map((post, index) => {
             return <Navbar key={`navbar${index}`} post={post}></Navbar>;
