@@ -86,11 +86,17 @@ function Navbar({ post }) {
               />
             </Link>
 
-            <Link href="#" className="">
+            <Link
+              href="#"
+              className="hover:text-white/20 hover:border-white/20 "
+            >
               {post.navbar.blogLink}
             </Link>
 
-            <Link href="#" className="">
+            <Link
+              href="#"
+              className="hover:text-white/20 hover:border-white/20 "
+            >
               {post.navbar.contactLink}
             </Link>
 
