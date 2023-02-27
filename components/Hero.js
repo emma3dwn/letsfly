@@ -9,15 +9,15 @@ function Hero({ post }) {
         backgroundImage: `url(${post.heroSection.heroBackground.mediaItemUrl})`,
       }}
     >
-      <div className="container mx-auto  text-white bg-blue-200/20 h-full ">
+      <div className="container mx-auto  text-white bg-blue-200/20 h-full md:px-0">
         <div className="flex flex-col items-end gap-4 md:flex-row bg-slate-500/30 h-full pt-20 pb-5 md:py-20">
           {/* HERO-TEXT LEFT SIDE  */}
-          <div className=" p-2 w-full md:w-1/2 ">
-            <h1 className="text-7xl w-4/6 mb-10">
+          <div className="mt-20 md:mt-0 p-2 w-full md:w-1/2 ">
+            <h1 className="mb-10 font-normal text-5xl w-2/3 md:text-9xl md:font-medium md:w-full ">
               {" "}
               {post.heroSection.leftSideHeading}{" "}
             </h1>
-            <p className=" text-2xl text-normal tracking-wide leading-relaxed">
+            <p className="font-thin md:font-light tra md:tracking-wider md:leading-relaxed md:text-2xl ">
               {" "}
               {post.heroSection.leftSideParagraph}{" "}
             </p>
@@ -33,10 +33,12 @@ function Hero({ post }) {
           {/* HERO-TEXT RIGHT SIDE  */}
           <div className=" p-2 w-full text-center md:w-1/4 md:text-left  ">
             <div>
-              <h2 className="text-5xl">{post.heroSection.rightSideHeading}</h2>
+              <h2 className="text-3xl w-1/2 mx-auto md:w-full md:text-5xl ">
+                {post.heroSection.rightSideHeading}
+              </h2>
 
               <img
-                className="md:hidden"
+                className=" bg-slate-500 w-5/6 mx-auto md:hidden "
                 src={post.heroSection.planeIllustration.mediaItemUrl}
                 alt="Plane Illustration"
               />
