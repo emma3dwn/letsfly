@@ -30,7 +30,7 @@ function Home({ posts }) {
         <InfoSectionTwo post={posts[0]}></InfoSectionTwo>
         <InfoSectionThree post={posts[0]}></InfoSectionThree>
       </main>
-      <Footer post={posts[0]}></Footer>;
+      <Footer post={posts[0]}></Footer>
     </div>
   );
 }

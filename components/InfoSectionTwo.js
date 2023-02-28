@@ -13,8 +13,8 @@ function InfoSectionTwo({ post }) {
             />
           </div>
 
-          <div className="pt-10 pb-0 w-full md:w-1/2 text-center">
-            <h3 className="text-xl md:mb-20 md:text-3xl md:font-semibold md:text-center lg:text-4xl ">
+          <div className="py-10 pb-0 w-full md:w-1/2 text-center">
+            <h3 className="py-10 text-xl md:mb-20 md:text-3xl md:font-semibold md:text-center lg:text-4xl ">
               {post.infoSection.infoSectionTextTwo}
             </h3>
           </div>
