@@ -103,8 +103,10 @@ return (
               className={styles.navbarLogo}
               src={post.navbar.logo.mediaItemUrl}
               alt="Logo"
+
               width={350}
               height={50}
+
               quality={75}
             />
           </Link>
