@@ -19,107 +19,18 @@ function Home({ posts }) {
       <Head>
         <title>Let's Fly</title>
       </Head>
-
-      <main className=" font-sans">
-        <div className="z-30 fixed">
-          {posts.map((post, index) => {
-            return <Navbar key={`navbar${index}`} post={post}></Navbar>;
-          })}
-        </div>
-
-        <div>
-          {posts.map((post, index) => {
-            return <Hero key={`hero${index}`} post={post}></Hero>;
-          })}
-        </div>
-
-        <div className="bannerOne">
-          {posts.map((post, index) => {
-            return (
-              <Banner
-                key={`banner1${index}`}
-                post={post}
-                text={post.banners.bannerOne}
-              ></Banner>
-            );
-          })}
-        </div>
-
-        <div className="introImgLeftSide">
-          {posts.map((post, index) => {
-            return (
-              <IntroImgLeftSide
-                key={`introleft${index}`}
-                post={post}
-              ></IntroImgLeftSide>
-            );
-          })}
-        </div>
-
-        <div className="introImgRightSide">
-          {posts.map((post, index) => {
-            return (
-              <IntroImgRightSide
-                key={`introright${index}`}
-                post={post}
-              ></IntroImgRightSide>
-            );
-          })}
-        </div>
-
-        <div className="bannerTwo">
-          {posts.map((post, index) => {
-            return (
-              <Banner
-                key={`banner2${index}`}
-                post={post}
-                text={post.banners.bannerTwo}
-              ></Banner>
-            );
-          })}
-        </div>
-
-        <div className="infoSectionOne">
-          {posts.map((post, index) => {
-            return (
-              <InfoSectionOne
-                key={`sectionone${index}`}
-                post={post}
-              ></InfoSectionOne>
-            );
-          })}
-        </div>
-
-        <div className="infoSectionTwo">
-          {posts.map((post, index) => {
-            return (
-              <InfoSectionTwo
-                key={`section2${index}`}
-                post={post}
-              ></InfoSectionTwo>
-            );
-          })}
-        </div>
-
-        <div className="infoSectionThree">
-          {posts.map((post, index) => {
-            return (
-              <InfoSectionThree
-                key={`section3${index}`}
-                post={post}
-              ></InfoSectionThree>
-            );
-          })}
-        </div>
+      <main className=" font-sans ">
+        <Navbar post={posts[0]}></Navbar>
+        <Hero post={posts[0]}></Hero>
+        <Banner post={posts[0]} text={posts[0].banners.bannerOne}></Banner>
+        <IntroImgLeftSide post={posts[0]}></IntroImgLeftSide>
+        <IntroImgRightSide post={posts[0]}></IntroImgRightSide>
+        <Banner post={posts[0]} text={posts[0].banners.bannerTwo}></Banner>
+        <InfoSectionOne post={posts[0]}></InfoSectionOne>
+        <InfoSectionTwo post={posts[0]}></InfoSectionTwo>
+        <InfoSectionThree post={posts[0]}></InfoSectionThree>
       </main>
-
-      <footer>
-        <div className="footer">
-          {posts.map((post, index) => {
-            return <Footer key={`footer${index}`} post={post}></Footer>;
-          })}
-        </div>
-      </footer>
+      <Footer post={posts[0]}></Footer>;
     </div>
   );
 }
