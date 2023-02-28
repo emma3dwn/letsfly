@@ -33,78 +33,55 @@ function Navbar({ post }) {
     textColor = "text-white-400";
   }
   return (
-    <header>
-      <nav
-        className={`fixed top-0 w-full p-5 ${bgColor} text-white ${textColor}`}
-      >
-        {/* NAVBAR MOBILE  */}
-        <div className="sm:block  md:hidden">
-          <div className="flex flex-row  gap-5 items-center">
-            <Link href="/">
-              <img
-                className="w-2/3 aspect-auto"
-                src={post.navbar.logo.mediaItemUrl}
-                alt="Logo"
-              />
-            </Link>
+    <header className="sticky w-full top-0">
+      <nav className={`w-full  ${bgColor} text-white ${textColor}`}>
+        <div className="container mx-auto p-5">
+          {/* NAVBAR MOBILE  */}
+          <div className="sm:block  md:hidden">
+            <div className="flex flex-row  gap-5 items-center">
+              <Link href="/">
+                <img
+                  className="w-2/3 aspect-auto"
+                  src={post.navbar.logo.mediaItemUrl}
+                  alt="Logo"
+                />
+              </Link>
 
-            <div className="flex-grow"></div>
-            <Button>
-              {/* Hamburger Toggle menu */}
-              <div className="" onClick={toggleMenu}>
-                {isOpen ? <FaTimes /> : <FaBars />}
-              </div>
-              {isOpen && (
-                <div className="flex flex-row">
-                  <Link href="#" className="" onClick={toggleMenu}>
-                    {post.navbar.blogLink}
-                  </Link>
-                  <Link href="#" className="" onClick={toggleMenu}>
-                    {post.navbar.contactLink}
-                  </Link>
-                  <Popup post={post} inNav={true} inMobileNav={true} />
-                  <Button
-                    key={post.id}
-                    post={post}
-                    text={post.navbar.downloadAppButton}
-                    inMobileNav={true}
-                  ></Button>
-                </div>
-              )}
-            </Button>
+              <div className="flex-grow"></div>
+            </div>
           </div>
-        </div>
 
-        {/* NAVBAR REST  */}
-        <div className=" hidden md:block">
-          <div className="container mx-auto flex flex-row items-center gap-5 ">
-            <Link href="/">
-              <img
-                className="aspect-auto  w-64"
-                src={post.navbar.logo.mediaItemUrl}
-                alt="Logo"
-              />
-            </Link>
+          {/* NAVBAR REST  */}
+          <div className=" hidden md:block">
+            <div className=" flex flex-row items-center gap-3 xl:gap-5 ">
+              <Link href="/">
+                <img
+                  className="aspect-auto  w-64"
+                  src={post.navbar.logo.mediaItemUrl}
+                  alt="Logo"
+                />
+              </Link>
 
-            <Link
-              href="#"
-              className="hover:text-white/20 hover:border-white/20 "
-            >
-              {post.navbar.blogLink}
-            </Link>
+              <Link
+                href="#"
+                className="hover:text-white/20 hover:border-white/20 "
+              >
+                {post.navbar.blogLink}
+              </Link>
 
-            <Link
-              href="#"
-              className="hover:text-white/20 hover:border-white/20 "
-            >
-              {post.navbar.contactLink}
-            </Link>
+              <Link
+                href="#"
+                className="hover:text-white/20 hover:border-white/20 "
+              >
+                {post.navbar.contactLink}
+              </Link>
 
-            <div className="flex-grow"></div>
+              <div className="flex-grow"></div>
 
-            <Popup post={post} inNav={true} />
+              <Popup post={post} inNav={true} />
 
-            <Button>{post.navbar.downloadAppButton}</Button>
+              <Button>{post.navbar.downloadAppButton}</Button>
+            </div>
           </div>
         </div>
       </nav>
@@ -185,3 +162,27 @@ return (
       </nav>
     </header>
   ); */
+
+/*<Button>
+  <div className="" onClick={toggleMenu}>
+    {isOpen ? <FaTimes /> : <FaBars />}
+  </div>
+  {isOpen && (
+    <div className="flex flex-row">
+      <Link href="#" className="" onClick={toggleMenu}>
+        {post.navbar.blogLink}
+      </Link>
+      <Link href="#" className="" onClick={toggleMenu}>
+        {post.navbar.contactLink}
+      </Link>
+      <Popup post={post} inNav={true} inMobileNav={true} />
+      <Button
+        key={post.id}
+        post={post}
+        text={post.navbar.downloadAppButton}
+        inMobileNav={true}
+      ></Button>
+    </div>
+  )}
+</Button> 
+*/
