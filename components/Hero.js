@@ -4,16 +4,16 @@ import SignMeUp from "./SignMeUp";
 function Hero({ post }) {
   return (
     <section
-      className="bg-local bg-cover bg-center bg-full h-screen "
+      className="bg-local bg-cover bg-center bg-full h-screen -mt-24"
       style={{
         backgroundImage: `url(${post.heroSection.heroBackground.mediaItemUrl})`,
       }}
     >
-      <div className="container mx-auto  text-white bg-blue-200/20 h-full md:px-0">
-        <div className="flex flex-col items-end gap-4 md:flex-row bg-slate-500/30 h-full pt-20 pb-5 md:py-20">
+      <div className="container mx-auto text-white  h-full md:px-0">
+        <div className="flex flex-col items-end gap-4 h-full pt-32 pb-5 md:flex-row md:py-20">
           {/* HERO-TEXT LEFT SIDE  */}
           <div className="mt-20 md:mt-0 p-2 w-full md:w-1/2 ">
-            <h1 className="mb-10 font-normal text-5xl w-2/3 md:text-9xl md:font-medium md:w-full ">
+            <h1 className="mb-10 font-normal text-5xl sm:text-7xl w-2/3 md:text-8xl lg:text-9xl md:font-medium md:w-full ">
               {" "}
               {post.heroSection.leftSideHeading}{" "}
             </h1>
@@ -38,7 +38,7 @@ function Hero({ post }) {
               </h2>
 
               <img
-                className=" bg-slate-500 w-5/6 mx-auto md:hidden "
+                className=" w-full mx-auto md:hidden "
                 src={post.heroSection.planeIllustration.mediaItemUrl}
                 alt="Plane Illustration"
               />
