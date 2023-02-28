@@ -1,13 +1,12 @@
-import React from 'react';
-import styles from '../styles/signMeUp.module.css';
-import Popup from './Popup';
+import React from "react";
+import Popup from "./Popup";
 
 function SignMeUp({ post }) {
   return (
-    <div className={styles.signMeUpWrapper}>
-      <h2 className={styles.signMeUpHeading}>
-        {post.heroSection.rightSideHeading}
-      </h2>
+    <div>
+      <h2 className="text-5xl">{post.heroSection.rightSideHeading}</h2>
+
+      {/* email button */}
       <Popup post={post} />
     </div>
   );

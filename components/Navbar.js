@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import styles from "../styles/navbar.module.css";
+
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "./Button";
@@ -16,7 +15,7 @@ function Navbar({ post }) {
 
   useEffect(() => {
     const changeNavbarColor = () => {
-      window.scrollY >= 100 ? setColorChange(true) : setColorChange(false);
+      window.scrollY >= 10 ? setColorChange(true) : setColorChange(false);
     };
 
     window.addEventListener("scroll", changeNavbarColor);
@@ -26,21 +25,88 @@ function Navbar({ post }) {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  console.log(post);
+
+  let bgColor = "bg-transparent";
+  let textColor = "text-white";
+  if (colorChange) {
+    bgColor = "bg-black/90";
+    textColor = "text-white-400";
+  }
   return (
+    <header className="sticky w-full top-0">
+      <nav className={`w-full  ${bgColor} text-white ${textColor}`}>
+        <div className="container mx-auto p-5">
+          {/* NAVBAR MOBILE  */}
+          <div className="sm:block  md:hidden">
+            <div className="flex flex-row  gap-5 items-center">
+              <Link href="/">
+                <img
+                  className="w-2/3 aspect-auto"
+                  src={post.navbar.logo.mediaItemUrl}
+                  alt="Logo"
+                />
+              </Link>
+
+              <div className="flex-grow"></div>
+            </div>
+          </div>
+
+          {/* NAVBAR REST  */}
+          <div className=" hidden md:block">
+            <div className=" flex flex-row items-center gap-3 xl:gap-5 ">
+              <Link href="/">
+                <img
+                  className="aspect-auto  w-64"
+                  src={post.navbar.logo.mediaItemUrl}
+                  alt="Logo"
+                />
+              </Link>
+
+              <Link
+                href="#"
+                className="hover:text-white/20 hover:border-white/20 "
+              >
+                {post.navbar.blogLink}
+              </Link>
+
+              <Link
+                href="#"
+                className="hover:text-white/20 hover:border-white/20 "
+              >
+                {post.navbar.contactLink}
+              </Link>
+
+              <div className="flex-grow"></div>
+
+              <Popup post={post} inNav={true} />
+
+              <Button>{post.navbar.downloadAppButton}</Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+}
+
+export default Navbar;
+
+/*
+
+return (
     <header>
-      <nav
-        className={colorChange ? styles.navbarWrapperBg : styles.navbarWrapper}
-      >
-        {/* NAVBAR DESKTOP LEFT SIDE */}
+      <nav className=" flex flex-row">
+        {/* NAVBAR DESKTOP LEFT SIDE }
         <div className={styles.leftSideNavbar}>
           <Link href="/">
             <Image
               className={styles.navbarLogo}
               src={post.navbar.logo.mediaItemUrl}
               alt="Logo"
-              width={256}
-              height={40}
+
+              width={350}
+              height={50}
+
               quality={75}
             />
           </Link>
@@ -52,7 +118,8 @@ function Navbar({ post }) {
           </Link>
         </div>
 
-        {/* NAVBAR DESKTOP RIGHT SIDE */}
+        <div className="grow"></div>
+        {/* NAVBAR DESKTOP RIGHT SIDE }
         <div className={styles.rightSideNavbar}>
           <Popup post={post} inNav={true} />
           <Button
@@ -62,15 +129,15 @@ function Navbar({ post }) {
           ></Button>
         </div>
 
-        {/* MOBILE TOGGLE MENU */}
-        {/* Hamburger Toggle */}
+        {/* MOBILE TOGGLE MENU }
+        {/* Hamburger Toggle }
         <div className={styles.hamburger} onClick={toggleMenu}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>
 
-        {/* Mobile Navigation Links */}
+        {/* Mobile Navigation Links }
         {isOpen && (
-          <div className={styles.mobileNavLinks}>
+          <div className="flex flex-row">
             <Link
               href="#"
               className={styles.mobileNavLink}
@@ -96,7 +163,28 @@ function Navbar({ post }) {
         )}
       </nav>
     </header>
-  );
-}
+  ); */
 
-export default Navbar;
+/*<Button>
+  <div className="" onClick={toggleMenu}>
+    {isOpen ? <FaTimes /> : <FaBars />}
+  </div>
+  {isOpen && (
+    <div className="flex flex-row">
+      <Link href="#" className="" onClick={toggleMenu}>
+        {post.navbar.blogLink}
+      </Link>
+      <Link href="#" className="" onClick={toggleMenu}>
+        {post.navbar.contactLink}
+      </Link>
+      <Popup post={post} inNav={true} inMobileNav={true} />
+      <Button
+        key={post.id}
+        post={post}
+        text={post.navbar.downloadAppButton}
+        inMobileNav={true}
+      ></Button>
+    </div>
+  )}
+</Button> 
+*/

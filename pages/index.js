@@ -3,8 +3,6 @@ import Head from "next/head";
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
 
-/* import api from "../api/api"; */
-
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
@@ -17,94 +15,22 @@ import InfoSectionThree from "../components/InfoSectionThree";
 
 function Home({ posts }) {
   return (
-    <div className="homeContainer">
+    <div>
       <Head>
         <title>Let's Fly</title>
-        <meta name="description" content="Let's fly" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <div className="navbar">
-          {posts.map((post) => {
-            return <Navbar key={post.id} post={post}></Navbar>;
-          })}
-        </div>
-
-        <div className="hero">
-          {posts.map((post) => {
-            return <Hero key={post.id} post={post}></Hero>;
-          })}
-        </div>
-
-        <div className="bannerOne">
-          {posts.map((post) => {
-            return (
-              <Banner
-                key={post.id}
-                post={post}
-                text={post.banners.bannerOne}
-              ></Banner>
-            );
-          })}
-        </div>
-
-        <div className="introImgLeftSide">
-          {posts.map((post) => {
-            return (
-              <IntroImgLeftSide key={post.id} post={post}></IntroImgLeftSide>
-            );
-          })}
-        </div>
-
-        <div className="introImgRightSide">
-          {posts.map((post) => {
-            return (
-              <IntroImgRightSide key={post.id} post={post}></IntroImgRightSide>
-            );
-          })}
-        </div>
-
-        <div className="bannerTwo">
-          {posts.map((post) => {
-            return (
-              <Banner
-                key={post.id}
-                post={post}
-                text={post.banners.bannerTwo}
-              ></Banner>
-            );
-          })}
-        </div>
-
-        <div className="infoSectionOne">
-          {posts.map((post) => {
-            return <InfoSectionOne key={post.id} post={post}></InfoSectionOne>;
-          })}
-        </div>
-
-        <div className="infoSectionTwo">
-          {posts.map((post) => {
-            return <InfoSectionTwo key={post.id} post={post}></InfoSectionTwo>;
-          })}
-        </div>
-
-        <div className="infoSectionThree">
-          {posts.map((post) => {
-            return (
-              <InfoSectionThree key={post.id} post={post}></InfoSectionThree>
-            );
-          })}
-        </div>
+      <main className=" font-sans ">
+        <Navbar post={posts[0]}></Navbar>
+        <Hero post={posts[0]}></Hero>
+        <Banner post={posts[0]} text={posts[0].banners.bannerOne}></Banner>
+        <IntroImgLeftSide post={posts[0]}></IntroImgLeftSide>
+        <IntroImgRightSide post={posts[0]}></IntroImgRightSide>
+        <Banner post={posts[0]} text={posts[0].banners.bannerTwo}></Banner>
+        <InfoSectionOne post={posts[0]}></InfoSectionOne>
+        <InfoSectionTwo post={posts[0]}></InfoSectionTwo>
+        <InfoSectionThree post={posts[0]}></InfoSectionThree>
       </main>
-
-      <footer>
-        <div className="footer">
-          {posts.map((post) => {
-            return <Footer key={post.id} post={post}></Footer>;
-          })}
-        </div>
-      </footer>
+      <Footer post={posts[0]}></Footer>
     </div>
   );
 }

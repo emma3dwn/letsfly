@@ -1,20 +1,30 @@
-import React from 'react'
-import styles from '../styles/introImgLeftSide.module.css'
-import Image from 'next/image'
+import React from "react";
 
 function IntroImgLeftSide({ post }) {
   return (
-    <section className={styles.introSectionWrapper}>
-          <div className={styles.introSection}>
-            <img className={styles.imgScreenShot} src={post.introSection.introSectionImgOne.mediaItemUrl} alt='Intro Section Image One' />
-            <div className={styles.introSectionTextContainer}>
-              <h2 className={styles.introSectionTitle}>{post.introSection.introSectionHeadingOne}</h2>
-              <p className={styles.introSectionParagraph}>{post.introSection.introSectionTextOne}</p>
-            </div>
-          </div> 
+    <section className="bg-full bg-fly-dark-grey  ">
+      <div className="container mx-auto  text-white">
+        <div className="flex flex-col items-center gap-4 py-8 md:py-16 md:flex-row">
+          <div className=" p-2 w-full md:w-1/2 flex justify-around	">
+            <img
+              className="h-[400px] md:h-[500px] lg:h-[500px]"
+              src={post.introSection.introSectionImgOne.mediaItemUrl}
+              alt="Intro Section Image One"
+            />
+          </div>
+
+          <div className=" p-2 w-full  md:w-1/3 text-right">
+            <h2 className="text-3xl mb-5 md:mb-20 md:text-5xl md:items-end">
+              {post.introSection.introSectionHeadingOne}
+            </h2>
+            <p className="md:font-extralight md:leading-relaxed">
+              {post.introSection.introSectionTextOne}
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-  )
+  );
 }
 
-export default IntroImgLeftSide
-
+export default IntroImgLeftSide;

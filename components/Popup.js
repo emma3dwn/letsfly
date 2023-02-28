@@ -1,8 +1,4 @@
-import React, { useState } from 'react';
-import modalStyles from '../styles/popup.module.css';
-import btnStyles from '../styles/button.module.css';
-import SignMeUpStyle from '../styles/signMeUp.module.css';
-import mobileNavStyle from '../styles/navbar.module.css';
+import React, { useState } from "react";
 
 const Popup = ({ post, inNav, inMobileNav }) => {
   const [isShown, setIsShown] = useState(false);
@@ -14,33 +10,25 @@ const Popup = ({ post, inNav, inMobileNav }) => {
   return (
     <div>
       <button
-        className={inNav ? btnStyles.signMeUpBtnInNav : (inMobileNav ? mobileNavStyle.signMeUpMobileNavLink : btnStyles.signMeUpBtn)}
-        onClick={toggleModal}>
-        {inNav ? post.navbar.signUpButton : post.heroSection.emailInput }
+        className="hover:text-white/20 hover:border-white/20"
+        onClick={toggleModal}
+      >
+        {inNav ? post.navbar.signUpButton : post.heroSection.emailInput}
       </button>
 
       {isShown ? (
-        <div className={modalStyles.modalOverlay} onClick={toggleModal}>
-          <div className={modalStyles.modalWrapper}>
-            <div className={modalStyles.modal}>
-              <div className={modalStyles.modalHeader}>
-                <a
-                  className={modalStyles.closeClick}
-                  href="#"
-                  onClick={toggleModal}
-                >
+        <div className="" onClick={toggleModal}>
+          <div className="">
+            <div className="">
+              <div className="">
+                <a className="" href="#" onClick={toggleModal}>
                   Close
                 </a>
               </div>
-              <div className={modalStyles.modalBody}>
-                <p className={modalStyles.modalParagraph}>
-                  {post.heroSection.leftSideParagraph}
-                </p>
-                <div className={SignMeUpStyle.signMeUpWrapper}>
-                  <h2 className={SignMeUpStyle.signMeUpHeading}>
-                    {' '}
-                    {post.heroSection.rightSideHeading}{' '}
-                  </h2>
+              <div>
+                <p>{post.heroSection.leftSideParagraph}</p>
+                <div>
+                  <h2>{post.heroSection.rightSideHeading} </h2>
                 </div>
               </div>
             </div>
