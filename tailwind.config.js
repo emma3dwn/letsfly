@@ -10,6 +10,15 @@ module.exports = {
   ],
 
   theme: {
+    container: {
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "3rem",
+        xl: "4rem",
+        "2xl": "6rem",
+      },
+    },
     extend: {
       colors: {
         "fly-dark-grey": "#232324",
@@ -20,23 +29,6 @@ module.exports = {
     },
     fontFamily: {
       sans: ["Poppins", "Helvetica", "Arial", "sans-serif"],
-    },
-    // screens: {
-    //   sm: { min: "320px", max: "767px" },
-    //   md: { min: "768px", max: "1023px" },
-    //   lg: { min: "1024px", max: "1279px" },
-    //   xl: { min: "1280px", max: "1535px" },
-    //   "2xl": { min: "1536px" },
-    // },
-    container: {
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1rem",
-        md: "2rem",
-        lg: "2rem",
-        xl: "5rem",
-        "2xl": "6rem",
-      },
     },
   },
   plugins: [],
