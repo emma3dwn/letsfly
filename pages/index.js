@@ -136,11 +136,8 @@ export async function getStaticProps() {
             infoSectionImgThree {
               mediaItemUrl
             }
-            infoSectionThreeTextFieldOneNumber
             infoSectionThreeTextFieldOneParagraph
-            infoSectionThreeTextFieldThreeNumber
             infoSectionThreeTextFieldThreeParagraph
-            infoSectionThreeTextFieldTwoNumber
             infoSectionThreeTextFieldTwoParagraph
           }
           footer {
