@@ -1,26 +1,28 @@
-import React from 'react';
-import styles from '../styles/infoSectionOne.module.css';
+import React from "react";
 
-function infoSectionOne({ post }) {
+export default function infoSectionOne({ post }) {
   return (
-    <section className={styles.infoSectionWrapper}>
-        <div className={styles.infoSection}>
+    <section className="bg-full bg-fly-2x-light-grey ">
+      <div className="container mx-auto text-fly-black">
+        <div className="flex flex-col items-center gap-4 py-8    md:py-16 md:flex-row">
+          <div className=" p-2 w-full md:w-1/2 flex justify-around	">
             <img
-              className={styles.imgScreenShot}
+              className="h-[400px] md:h-[500px] lg:h-[500px]"
               src={post.infoSection.infoSectionImgOne.mediaItemUrl}
               alt="Info Section Image One"
-            /> 
-          <div className={styles.infoSectionTextContainer}>
-            <h2 className={styles.infoSectionTitle}>
+            />
+          </div>
+
+          <div className="p-2 w-full md:w-1/2 text-right">
+            <h2 className="text-3xl mb-5 md:mb-20 md:text-5xl md:items-end">
               {post.infoSection.infoSectionHeadingOne}
             </h2>
-            <p className={styles.infoSectionParagraph}>
+            <p className="font-thin md:font-extralight md:leading-relaxed">
               {post.infoSection.infoSectionTextOne}
             </p>
           </div>
         </div>
+      </div>
     </section>
   );
 }
-
-export default infoSectionOne;

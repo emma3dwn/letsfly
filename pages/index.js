@@ -17,11 +17,9 @@ import InfoSectionThree from '../components/InfoSectionThree';
 
 function Home({ posts }) {
   return (
-    <div className="homeContainer">
+    <div>
       <Head>
         <title>Let's Fly</title>
-        <meta name="description" content="Let's fly" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
@@ -76,7 +74,6 @@ function Home({ posts }) {
           })}
         </div>
       </footer>
-      
     </div>
   );
 }

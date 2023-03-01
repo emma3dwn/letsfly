@@ -1,88 +1,70 @@
-import Link from 'next/link';
-import React from 'react';
-import styles from '../styles/footer.module.css';
-import Button from './Button'
-import Popup from './Popup'
+import Link from "next/link";
+import React from "react";
+
+import Image from "next/image";
+
+import Popup from "./Popup";
 
 function Footer({ post }) {
   return (
-    <>
-      <section className={styles.footerSectionWrapper}>
-        {/* LEFT SIDE */}
-        <div className={styles.footerLeftSide}>
+    <footer>
+      <section className="bg-full bg-black ">
+        <div className="container m-auto p-8 text-white">
           {/* Logo */}
-          <Link href="/">
-            <img
-              className={styles.footerLeftSideLogo}
-              src={post.footer.footerLogo.mediaItemUrl}
-              alt="Logo"
-            />
-          </Link>
-
-          {/* First Links */}
-          <div className={styles.footerLeftSideLinksContainerOne}>
-            <Link className={styles.footerFirstLinks} href="#">
-              {post.footer.footerLinks.contactLink.title}
-            </Link>
-            <Link className={styles.footerFirstLinks} href="#">
-              {post.footer.footerLinks.aboutUsLink.title}
-            </Link>
-            <Link className={styles.footerFirstLinks} href="#">
-              {post.footer.footerLinks.faqLink.title}
+          <div className="">
+            <Link href="/">
+              <img
+                className="w-56"
+                src={post.footer.footerLogo.mediaItemUrl}
+                alt="Logo"
+              />
             </Link>
           </div>
 
-          {/* Second Links */}
-          <div className={styles.footerLeftSideLinksContainerTwo}>
-            <Link className={styles.footerSecondLinks} href="#">
-              {post.footer.footerLinks.termsLink.title}
-            </Link>
-            <Link className={styles.footerSecondLinks} href="#">
-              {post.footer.footerLinks.privacyLink.title}
-            </Link>
-          </div>
-        </div>
+          <div className="flex flex-col items-left gap-2 md:flex-row">
+            {/* LEFT SIDE */}
 
-        {/* RIGHT SIDE */}
-        <div className={styles.footerRightSide}>
-          <p className={styles.footerRightSideFormTitle}>
-            {post.footer.newsletterSignUp.newsletterSignUpText}
-          </p>
-          <Popup post={post}/>
-          <div className={styles.footerSmIconWrapper}>
-            <img
-              className={styles.footerSmIcon}
-              src={post.footer.socialIcons.socialIconLinkedin.mediaItemUrl}
-              alt="Linked in"
-            />
-            <img
-              className={styles.footerSmIcon}
-              src={post.footer.socialIcons.socialIconInstagram.mediaItemUrl}
-              alt="Instagram"
-            />
-            <img
-              className={styles.footerSmIcon}
-              src={post.footer.socialIcons.socialIconFacebook.mediaItemUrl}
-              alt="Facebook"
-            />
+            {/* First Links */}
+
+            <Link href="#">{post.footer.footerLinks.contactLink.title}</Link>
+            <Link href="#">{post.footer.footerLinks.aboutUsLink.title}</Link>
+            <Link href="#">{post.footer.footerLinks.faqLink.title}</Link>
+
+            {/* Second Links */}
+
+            {/* RIGHT SIDE */}
+            <div className=" p-2 w-full md:w-1/2 text-center md:text-right">
+              <p>{post.footer.newsletterSignUp.newsletterSignUpText}</p>
+
+              <div className="flex justify-center	gap-4 my-2">
+                <img
+                  className="w-6"
+                  src={post.footer.socialIcons.socialIconLinkedin.mediaItemUrl}
+                  alt="Linked in"
+                />
+                <img
+                  className="w-6"
+                  src={post.footer.socialIcons.socialIconInstagram.mediaItemUrl}
+                  alt="Instagram"
+                />
+                <img
+                  className="w-6"
+                  src={post.footer.socialIcons.socialIconFacebook.mediaItemUrl}
+                  alt="Facebook"
+                />
+              </div>
+            </div>
+            <div className="flex justify-center	gap-4 my-2">
+              <Link href="#">{post.footer.footerLinks.termsLink.title}</Link>
+              <Link href="#">{post.footer.footerLinks.privacyLink.title}</Link>
+            </div>
+            <div className="flex justify-center	gap-4 my-2">
+              <p> {post.footer.copyright} </p>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* FOOTER BOTTOM/COPYRIGHT */}
-      <div className={styles.footerCopyrightContainer}>
-        {/* Second Links Mobile */}
-        <div className={styles.footerLeftSideLinksContainerTwoMobile}>
-          <Link className={styles.footerSecondLinksMobile} href="#">
-            {post.footer.footerLinks.termsLink.title}
-          </Link>
-          <Link className={styles.footerSecondLinksMobile} href="#">
-            {post.footer.footerLinks.privacyLink.title}
-          </Link>
-        </div>
-        <p className={styles.footerCopyright}> {post.footer.copyright} </p>
-      </div>
-    </>
+    </footer>
   );
 }
 

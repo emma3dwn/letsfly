@@ -1,25 +1,25 @@
 import React from "react";
-import styles from "../styles/introImgRightSide.module.css";
-import Image from "next/image";
 
 function IntroImgRightSide({ post }) {
   return (
-    <section className={styles.introSectionWrapper}>
-      <div className={styles.introSection}>
-        <Image
-          className={styles.imgScreenShot}
-          src={post.introSection.introSectionImgTwo.mediaItemUrl}
-          alt="Intro Section Image Two"
-          width={384}
-          height={432}
-        />
-        <div className={styles.introSectionTextContainer}>
-          <h2 className={styles.introSectionTitle}>
-            {post.introSection.introSectionHeadingTwo}
-          </h2>
-          <p className={styles.introSectionParagraph}>
-            {post.introSection.introSectionTextTwo}
-          </p>
+    <section className="bg-full bg-fly-dark-grey ">
+      <div className="container mx-auto  text-white pt-2">
+        <div className="flex flex-col items-center gap-4 pt-0 pb-8    md:pb-16 md:flex-row-reverse ">
+          <div className="p-2 w-full md:w-1/2 flex justify-around	">
+            <img
+              className="h-[400px] md:h-[380px] lg:h-[500px]"
+              src={post.introSection.introSectionImgTwo.mediaItemUrl}
+              alt="Intro Section Image Two"
+            />
+          </div>
+          <div className=" p-2 w-full md:w-1/3 text-left">
+            <h2 className="text-3xl mb-5 md:mb-20 md:text-5xl md:items-end">
+              {post.introSection.introSectionHeadingTwo}
+            </h2>
+            <p className="font-thin md:font-extralight md:leading-relaxed">
+              {post.introSection.introSectionTextTwo}
+            </p>
+          </div>
         </div>
       </div>
     </section>
