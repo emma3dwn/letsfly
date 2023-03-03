@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Popup = ({ post, inNav, inMobileNav }) => {
+const Popup = ({ component, inNav, inMobileNav }) => {
   const [isShown, setIsShown] = useState(false);
 
   const toggleModal = () => {
@@ -13,7 +13,7 @@ const Popup = ({ post, inNav, inMobileNav }) => {
         className="hover:text-white/20 hover:border-white/20"
         onClick={toggleModal}
       >
-        {inNav ? post.navbar.signUpButton : post.heroSection.emailInput}
+        {inNav ? component.navbar.signUpButton : component.heroSection.emailInput}
       </button>
 
       {isShown ? (
@@ -26,9 +26,9 @@ const Popup = ({ post, inNav, inMobileNav }) => {
                 </a>
               </div>
               <div>
-                <p>{post.heroSection.leftSideParagraph}</p>
+                <p>{component.heroSection.leftSideParagraph}</p>
                 <div>
-                  <h2>{post.heroSection.rightSideHeading} </h2>
+                  <h2>{component.heroSection.rightSideHeading} </h2>
                 </div>
               </div>
             </div>

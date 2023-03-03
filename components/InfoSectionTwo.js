@@ -1,6 +1,6 @@
 import React from "react";
 
-function InfoSectionTwo({ post }) {
+function InfoSectionTwo({ component }) {
   return (
     <section className="bg-full bg-fly-2x-light-grey ">
       <div className="container mx-auto  text-fly-black pt-2">
@@ -8,14 +8,14 @@ function InfoSectionTwo({ post }) {
           <div className=" p-2 w-full md:w-1/2 flex justify-around	">
             <img
               className="h-[400px] md:h-[380px] lg:h-[500px]"
-              src={post.infoSection.infoSectionImgTwo.mediaItemUrl}
+              src={component.infoSection.infoSectionImgTwo.mediaItemUrl}
               alt="Info Section Image Two"
             />
           </div>
 
           <div className="py-10 pb-0 w-full md:w-1/2 text-center">
             <h3 className="py-10 text-xl md:mb-20 md:text-3xl md:font-semibold md:text-center lg:text-4xl ">
-              {post.infoSection.infoSectionTextTwo}
+              {component.infoSection.infoSectionTextTwo}
             </h3>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "./Button";
 import Popup from "./Popup";
 
-function Navbar({ post }) {
+function Navbar({ component }) {
   {
     /* Navbar BG change at scroll */
   }
@@ -42,7 +42,7 @@ function Navbar({ post }) {
               <Link href="/">
                 <img
                   className="w-2/3 aspect-auto"
-                  src={post.navbar.logo.mediaItemUrl}
+                  src={component.navbar.logo.mediaItemUrl}
                   alt="Logo"
                 />
               </Link>
@@ -57,7 +57,7 @@ function Navbar({ post }) {
               <Link href="/">
                 <img
                   className="aspect-auto  w-64"
-                  src={post.navbar.logo.mediaItemUrl}
+                  src={component.navbar.logo.mediaItemUrl}
                   alt="Logo"
                 />
               </Link>
@@ -66,21 +66,21 @@ function Navbar({ post }) {
                 href="#"
                 className="hover:text-white/20 hover:border-white/20 "
               >
-                {post.navbar.blogLink}
+                {component.navbar.blogLink}
               </Link>
 
               <Link
                 href="#"
                 className="hover:text-white/20 hover:border-white/20 "
               >
-                {post.navbar.contactLink}
+                {component.navbar.contactLink}
               </Link>
 
               <div className="flex-grow"></div>
 
-              <Popup post={post} inNav={true} />
+              <Popup component={component} inNav={true} />
 
-              <Button>{post.navbar.downloadAppButton}</Button>
+              <Button>{component.navbar.downloadAppButton}</Button>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ return (
           <Link href="/">
             <Image
               className={styles.navbarLogo}
-              src={post.navbar.logo.mediaItemUrl}
+              src={componentnavbar.logo.mediaItemUrl}
               alt="Logo"
 
               width={350}
@@ -111,10 +111,10 @@ return (
             />
           </Link>
           <Link href="#" className={styles.navLinks} onClick={toggleMenu}>
-            {post.navbar.blogLink}
+            {componentnavbar.blogLink}
           </Link>
           <Link href="#" className={styles.navLinks} onClick={toggleMenu}>
-            {post.navbar.contactLink}
+            {componentnavbar.contactLink}
           </Link>
         </div>
 
@@ -123,9 +123,9 @@ return (
         <div className={styles.rightSideNavbar}>
           <Popup post={post} inNav={true} />
           <Button
-            key={post.id}
+            key={componentid}
             post={post}
-            text={post.navbar.downloadAppButton}
+            text={componentnavbar.downloadAppButton}
           ></Button>
         </div>
 
@@ -143,20 +143,20 @@ return (
               className={styles.mobileNavLink}
               onClick={toggleMenu}
             >
-              {post.navbar.blogLink}
+              {componentnavbar.blogLink}
             </Link>
             <Link
               href="#"
               className={styles.mobileNavLink}
               onClick={toggleMenu}
             >
-              {post.navbar.contactLink}
+              {componentnavbar.contactLink}
             </Link>
             <Popup post={post} inNav={true} inMobileNav={true} />
             <Button
-              key={post.id}
+              key={componentid}
               post={post}
-              text={post.navbar.downloadAppButton}
+              text={componentnavbar.downloadAppButton}
               inMobileNav={true}
             ></Button>
           </div>
@@ -172,16 +172,16 @@ return (
   {isOpen && (
     <div className="flex flex-row">
       <Link href="#" className="" onClick={toggleMenu}>
-        {post.navbar.blogLink}
+        {componentnavbar.blogLink}
       </Link>
       <Link href="#" className="" onClick={toggleMenu}>
-        {post.navbar.contactLink}
+        {componentnavbar.contactLink}
       </Link>
       <Popup post={post} inNav={true} inMobileNav={true} />
       <Button
-        key={post.id}
+        key={componentid}
         post={post}
-        text={post.navbar.downloadAppButton}
+        text={componentnavbar.downloadAppButton}
         inMobileNav={true}
       ></Button>
     </div>
