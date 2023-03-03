@@ -4,10 +4,10 @@ export default function InfoSectionThree({ post }) {
   return (
     <section className="bg-full bg-fly-2x-light-grey">
       <div className="container mx-auto  text-fly-black">
-        <div className="flex flex-col items-center gap-4 py-0    md:py-16 md:flex-row">
+        <div className="flex flex-col items-center gap-4 py-0 md:justify-between  md:py-16 md:flex-row">
           <div className=" p-2 w-full md:w-1/2 flex justify-around	">
             <img
-              className="h-[400px] md:h-[500px] lg:h-[500px]"
+              className="h-[500px] md:h-[400px] lg:h-[500px]"
               src={post.infoSection.infoSectionImgThree.mediaItemUrl}
               alt="Info Section Image Three"
             />

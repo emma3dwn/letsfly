@@ -7,7 +7,7 @@ function InfoSectionTwo({ post }) {
         <div className="flex flex-col items-center gap-4 pt-0 pb-8    md:py-16 md:flex-row-reverse ">
           <div className=" p-2 w-full md:w-1/2 flex justify-around	">
             <img
-              className="h-[400px] md:h-[380px] lg:h-[500px]"
+              className="h-[360px] md:h-[360px] lg:h-[500px]"
               src={post.infoSection.infoSectionImgTwo.mediaItemUrl}
               alt="Info Section Image Two"
             />
