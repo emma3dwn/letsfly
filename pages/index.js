@@ -1,45 +1,105 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import { client } from "../lib/apollo";
-import { gql } from "@apollo/client";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import { client } from '../lib/apollo';
+import { gql } from '@apollo/client/core';
 
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
-import Banner from "../components/Banner";
-import IntroImgLeftSide from "../components/IntroImgLeftSide";
-import IntroImgRightSide from "../components/IntroImgRightSide";
-import InfoSectionOne from "../components/InfoSectionOne";
-import InfoSectionTwo from "../components/InfoSectionTwo";
-import InfoSectionThree from "../components/InfoSectionThree";
+/* import api from "../api/api"; */
 
-function Home({ posts }) {
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Footer from '../components/Footer';
+import Banner from '../components/Banner';
+import IntroImgLeftSide from '../components/IntroImgLeftSide';
+import IntroImgRightSide from '../components/IntroImgRightSide';
+import InfoSectionOne from '../components/InfoSectionOne';
+import InfoSectionTwo from '../components/InfoSectionTwo';
+import InfoSectionThree from '../components/InfoSectionThree';
+
+function Home({ nodeByUri }) {
   return (
     <div>
       <Head>
         <title>Let's Fly</title>
       </Head>
-      <main className=" font-sans ">
-        <Navbar post={posts[0]}></Navbar>
-        <Hero post={posts[0]}></Hero>
-        <Banner post={posts[0]} text={posts[0].banners.bannerOne}></Banner>
-        <IntroImgLeftSide post={posts[0]}></IntroImgLeftSide>
-        <IntroImgRightSide post={posts[0]}></IntroImgRightSide>
-        <Banner post={posts[0]} text={posts[0].banners.bannerTwo}></Banner>
-        <InfoSectionOne post={posts[0]}></InfoSectionOne>
-        <InfoSectionTwo post={posts[0]}></InfoSectionTwo>
-        <InfoSectionThree post={posts[0]}></InfoSectionThree>
+
+      <main>
+        {nodeByUri && (
+          <>
+            <div className="navbar">
+              <Navbar component={nodeByUri}></Navbar>
+            </div>
+
+            <div className="hero">
+              <Hero component={nodeByUri}></Hero>
+            </div>
+
+            <div className="bannerOne">
+              <Banner
+                component={nodeByUri}
+                text={nodeByUri.banners.bannerOne}
+              ></Banner>
+            </div>
+
+            <div className="introImgLeftSide">
+              <IntroImgLeftSide component={nodeByUri}></IntroImgLeftSide>
+            </div>
+
+            <div className="introImgRightSide">
+              <IntroImgRightSide component={nodeByUri}></IntroImgRightSide>
+            </div>
+
+            <div className="bannerTwo">
+              <Banner
+                component={nodeByUri}
+                text={nodeByUri.banners.bannerTwo}
+              ></Banner>
+            </div>
+
+            <div className="infoSectionOne">
+              <InfoSectionOne
+                key={nodeByUri.id}
+                component={nodeByUri}
+              ></InfoSectionOne>
+            </div>
+
+            <div className="infoSectionTwo">
+              <InfoSectionTwo
+                key={nodeByUri.id}
+                component={nodeByUri}
+              ></InfoSectionTwo>
+            </div>
+
+            <div className="infoSectionThree">
+              <InfoSectionThree
+                key={nodeByUri.id}
+                component={nodeByUri}
+              ></InfoSectionThree>
+            </div>
+          </>
+        )}
       </main>
-      <Footer post={posts[0]}></Footer>
+
+      <footer>
+        <div className="footer">
+          {nodeByUri && <Footer component={nodeByUri}></Footer>}
+        </div>
+      </footer>
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const GET_POSTS = gql`
-    query AllPostsQuery {
-      posts {
-        nodes {
+  const GET_FRONTPAGE = gql`
+    query PageQuery {
+      nodeByUri(uri: "/") {
+        __typename
+        ... on ContentType {
+          id
+          name
+        }
+        ... on Page {
+          id
+          title
           heroSection {
             heroBackground {
               mediaItemUrl
@@ -90,11 +150,8 @@ export async function getStaticProps() {
             infoSectionImgThree {
               mediaItemUrl
             }
-            infoSectionThreeTextFieldOneNumber
             infoSectionThreeTextFieldOneParagraph
-            infoSectionThreeTextFieldThreeNumber
             infoSectionThreeTextFieldThreeParagraph
-            infoSectionThreeTextFieldTwoNumber
             infoSectionThreeTextFieldTwoParagraph
           }
           footer {
@@ -146,13 +203,13 @@ export async function getStaticProps() {
   `;
 
   const response = await client.query({
-    query: GET_POSTS,
+    query: GET_FRONTPAGE,
   });
 
-  const posts = response?.data?.posts?.nodes;
+  const nodeByUri = response?.data?.nodeByUri;
   return {
     props: {
-      posts,
+      nodeByUri,
     },
   };
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InfoSectionThree({ post }) {
+export default function InfoSectionThree({ component }) {
   return (
     <section className="bg-full bg-fly-2x-light-grey">
       <div className="container mx-auto  text-fly-black">
@@ -8,7 +8,7 @@ export default function InfoSectionThree({ post }) {
           <div className=" p-2 w-full md:w-1/2 flex justify-around	">
             <img
               className="h-[360px] md:h-[380px] lg:h-[500px]"
-              src={post.infoSection.infoSectionImgThree.mediaItemUrl}
+              src={component.infoSection.infoSectionImgThree.mediaItemUrl}
               alt="Info Section Image Three"
             />
           </div>
@@ -17,16 +17,16 @@ export default function InfoSectionThree({ post }) {
             <div className="grid grid-cols-5       md:grid-cols-3 gap-x-4 gap-y-16">
               <div className="text-right text-4xl font-mono">01</div>
               <div className=" text-justify col-span-4 md:col-span-2 ">
-                {post.infoSection.infoSectionThreeTextFieldOneParagraph}
+                {component.infoSection.infoSectionThreeTextFieldOneParagraph}
               </div>
               <div className="text-right text-4xl font-mono">02</div>
               <div className="text-justify col-span-4 md:col-span-2 ">
-                {post.infoSection.infoSectionThreeTextFieldTwoParagraph}
+                {component.infoSection.infoSectionThreeTextFieldTwoParagraph}
               </div>
               <div className="text-right text-4xl font-mono">03</div>
 
               <div className="text-justify col-span-4 md:col-span-2 ">
-                {post.infoSection.infoSectionThreeTextFieldThreeParagraph}
+                {component.infoSection.infoSectionThreeTextFieldThreeParagraph}
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-function Footer({ post }) {
+function Footer({ component }) {
   return (
     <footer>
       <section className="bg-full bg-black ">
@@ -11,7 +11,7 @@ function Footer({ post }) {
             <Link href="/">
               <img
                 className="w-56"
-                src={post.footer.footerLogo.mediaItemUrl}
+                src={component.footer.footerLogo.mediaItemUrl}
                 alt="Logo"
               />
             </Link>
@@ -19,37 +19,37 @@ function Footer({ post }) {
 
           {/* Mobile */}
           <div className="flex flex-col items-left gap-2 md:hidden ">
-            <Link href="#">{post.footer.footerLinks.contactLink.title}</Link>
-            <Link href="#">{post.footer.footerLinks.aboutUsLink.title}</Link>
-            <Link href="#">{post.footer.footerLinks.faqLink.title}</Link>
+            <Link href="#">{component.footer.footerLinks.contactLink.title}</Link>
+            <Link href="#">{component.footer.footerLinks.aboutUsLink.title}</Link>
+            <Link href="#">{component.footer.footerLinks.faqLink.title}</Link>
 
             <div className=" p-2 w-full  text-center">
-              <p>{post.footer.newsletterSignUp.newsletterSignUpText}</p>
+              <p>{component.footer.newsletterSignUp.newsletterSignUpText}</p>
 
               <div className="flex justify-center	gap-4 my-2">
                 <img
                   className="w-6"
-                  src={post.footer.socialIcons.socialIconLinkedin.mediaItemUrl}
+                  src={component.footer.socialIcons.socialIconLinkedin.mediaItemUrl}
                   alt="Linked in"
                 />
                 <img
                   className="w-6"
-                  src={post.footer.socialIcons.socialIconInstagram.mediaItemUrl}
+                  src={component.footer.socialIcons.socialIconInstagram.mediaItemUrl}
                   alt="Instagram"
                 />
                 <img
                   className="w-6"
-                  src={post.footer.socialIcons.socialIconFacebook.mediaItemUrl}
+                  src={component.footer.socialIcons.socialIconFacebook.mediaItemUrl}
                   alt="Facebook"
                 />
               </div>
             </div>
             <div className="flex justify-center	gap-4 my-2">
-              <Link href="#">{post.footer.footerLinks.termsLink.title}</Link>
-              <Link href="#">{post.footer.footerLinks.privacyLink.title}</Link>
+              <Link href="#">{component.footer.footerLinks.termsLink.title}</Link>
+              <Link href="#">{component.footer.footerLinks.privacyLink.title}</Link>
             </div>
             <div className="flex justify-center	gap-4 my-2">
-              <p> {post.footer.copyright} </p>
+              <p> {component.footer.copyright} </p>
             </div>
           </div>
           {/* Ipad and larger */}
@@ -58,23 +58,23 @@ function Footer({ post }) {
             <div className="grid grid-cols-2">
               <div className="flex gap-2">
                 <Link href="#">
-                  {post.footer.footerLinks.contactLink.title}
+                  {component.footer.footerLinks.contactLink.title}
                 </Link>
                 <Link href="#">
-                  {post.footer.footerLinks.aboutUsLink.title}
+                  {component.footer.footerLinks.aboutUsLink.title}
                 </Link>
-                <Link href="#">{post.footer.footerLinks.faqLink.title}</Link>
+                <Link href="#">{component.footer.footerLinks.faqLink.title}</Link>
               </div>
 
               <div className="text-center">
-                <p>{post.footer.newsletterSignUp.newsletterSignUpText}</p>
+                <p>{component.footer.newsletterSignUp.newsletterSignUpText}</p>
                 <input type="text" />
               </div>
 
               <div className="flex gap-2">
-                <Link href="#">{post.footer.footerLinks.termsLink.title}</Link>
+                <Link href="#">{component.footer.footerLinks.termsLink.title}</Link>
                 <Link href="#">
-                  {post.footer.footerLinks.privacyLink.title}
+                  {component.footer.footerLinks.privacyLink.title}
                 </Link>
               </div>
               <div>
@@ -82,21 +82,21 @@ function Footer({ post }) {
                   <img
                     className="w-6"
                     src={
-                      post.footer.socialIcons.socialIconLinkedin.mediaItemUrl
+                      component.footer.socialIcons.socialIconLinkedin.mediaItemUrl
                     }
                     alt="Linked in"
                   />
                   <img
                     className="w-6"
                     src={
-                      post.footer.socialIcons.socialIconInstagram.mediaItemUrl
+                      component.footer.socialIcons.socialIconInstagram.mediaItemUrl
                     }
                     alt="Instagram"
                   />
                   <img
                     className="w-6"
                     src={
-                      post.footer.socialIcons.socialIconFacebook.mediaItemUrl
+                      component.footer.socialIcons.socialIconFacebook.mediaItemUrl
                     }
                     alt="Facebook"
                   />
@@ -105,7 +105,7 @@ function Footer({ post }) {
             </div>
             <div className="flex justify-center	gap-4 my-2"></div>
             <div className="flex justify-center	gap-4 my-2">
-              <p> {post.footer.copyright} </p>
+              <p> {component.footer.copyright} </p>
             </div>
           </div>
         </div>
