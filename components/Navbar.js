@@ -33,11 +33,11 @@ function Navbar({ component }) {
     textColor = "text-white-400";
   }
   return (
-    <header className="sticky w-full top-0">
+    <header className="sticky w-full top-0 h-24">
       <nav className={`w-full  ${bgColor} text-white ${textColor}`}>
         <div className="container mx-auto p-5">
           {/* NAVBAR MOBILE  */}
-          <div className="sm:block  md:hidden">
+          <div className="sm:block  lg:hidden">
             <div className="flex flex-row  gap-5 items-center">
               <Link href="/">
                 <img
@@ -52,7 +52,7 @@ function Navbar({ component }) {
           </div>
 
           {/* NAVBAR REST  */}
-          <div className=" hidden md:block">
+          <div className=" hidden lg:block">
             <div className=" flex flex-row items-center gap-3 xl:gap-5 ">
               <Link href="/">
                 <img

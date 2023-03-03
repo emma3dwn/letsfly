@@ -4,10 +4,11 @@ function IntroImgRightSide({ component }) {
   return (
     <section className="bg-full bg-fly-dark-grey ">
       <div className="container mx-auto  text-white pt-2">
-        <div className="flex flex-col items-center gap-4 pt-0 pb-8    md:pb-16 md:flex-row-reverse ">
-          <div className="p-2 w-full md:w-1/2 flex justify-around	">
+        <div className="flex flex-col items-center gap-4 py-8  md:pb-16 md:flex-row-reverse md:justify-between">
+          <div className="p-2 w-full md:w-1/2 flex	">
             <img
-              className="h-[400px] md:h-[380px] lg:h-[500px]"
+              className="h-[300px] md:h-[380px] lg:h-[500px]"
+              //w-full md:w-3/5
               src={component.introSection.introSectionImgTwo.mediaItemUrl}
               alt="Intro Section Image Two"
             />

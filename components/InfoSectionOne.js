@@ -7,7 +7,7 @@ export default function infoSectionOne({ component }) {
         <div className="flex flex-col items-center gap-4 py-8    md:py-16 md:flex-row">
           <div className=" p-2 w-full md:w-1/2 flex justify-around	">
             <img
-              className="h-[400px] md:h-[500px] lg:h-[500px]"
+              className="h-[360px] md:h-[360px] lg:h-[500px]"
               src={component.infoSection.infoSectionImgOne.mediaItemUrl}
               alt="Info Section Image One"
             />
@@ -17,7 +17,7 @@ export default function infoSectionOne({ component }) {
             <h2 className="text-3xl mb-5 md:mb-20 md:text-5xl md:items-end">
               {component.infoSection.infoSectionHeadingOne}
             </h2>
-            <p className="font-thin md:font-extralight md:leading-relaxed">
+            <p className="font-extralight md:font-extralight lg:font-normal md:leading-relaxed">
               {component.infoSection.infoSectionTextOne}
             </p>
           </div>
