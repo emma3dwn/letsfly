@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { client } from '../lib/apollo';
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client/core';
 
 /* import api from "../api/api"; */
 
@@ -15,7 +15,7 @@ import InfoSectionOne from '../components/InfoSectionOne';
 import InfoSectionTwo from '../components/InfoSectionTwo';
 import InfoSectionThree from '../components/InfoSectionThree';
 
-function Home({ posts }) {
+function Home({ nodeByUri }) {
   return (
     <div>
       <Head>
@@ -23,55 +23,65 @@ function Home({ posts }) {
       </Head>
 
       <main>
-        {posts.map((post) => {
-          return (
-            <div key={post.id}>
-              <div className="navbar">
-                <Navbar post={post}></Navbar>
-              </div>
-
-              <div className="hero">
-                <Hero post={post}></Hero>
-              </div>
-
-              <div className="bannerOne">
-                <Banner post={post} text={post.banners.bannerOne}></Banner>
-              </div>
-
-              <div className="introImgLeftSide">
-                <IntroImgLeftSide post={post}></IntroImgLeftSide>
-              </div>
-
-              <div className="introImgRightSide">
-                <IntroImgRightSide post={post}></IntroImgRightSide>
-              </div>
-
-              <div className="bannerTwo">
-                <Banner post={post} text={post.banners.bannerTwo}></Banner>
-              </div>
-
-              <div className="infoSectionOne">
-                <InfoSectionOne key={post.id} post={post}></InfoSectionOne>
-              </div>
-
-              <div className="infoSectionTwo">
-                <InfoSectionTwo key={post.id} post={post}></InfoSectionTwo>
-              </div>
-
-              <div className="infoSectionThree">
-                <InfoSectionThree key={post.id} post={post}></InfoSectionThree>
-              </div>
-
+        {nodeByUri && (
+          <>
+            <div className="navbar">
+              <Navbar component={nodeByUri}></Navbar>
             </div>
-          );
-        })}
+
+            <div className="hero">
+              <Hero component={nodeByUri}></Hero>
+            </div>
+
+            <div className="bannerOne">
+              <Banner
+                component={nodeByUri}
+                text={nodeByUri.banners.bannerOne}
+              ></Banner>
+            </div>
+
+            <div className="introImgLeftSide">
+              <IntroImgLeftSide component={nodeByUri}></IntroImgLeftSide>
+            </div>
+
+            <div className="introImgRightSide">
+              <IntroImgRightSide component={nodeByUri}></IntroImgRightSide>
+            </div>
+
+            <div className="bannerTwo">
+              <Banner
+                component={nodeByUri}
+                text={nodeByUri.banners.bannerTwo}
+              ></Banner>
+            </div>
+
+            <div className="infoSectionOne">
+              <InfoSectionOne
+                key={nodeByUri.id}
+                component={nodeByUri}
+              ></InfoSectionOne>
+            </div>
+
+            <div className="infoSectionTwo">
+              <InfoSectionTwo
+                key={nodeByUri.id}
+                component={nodeByUri}
+              ></InfoSectionTwo>
+            </div>
+
+            <div className="infoSectionThree">
+              <InfoSectionThree
+                key={nodeByUri.id}
+                component={nodeByUri}
+              ></InfoSectionThree>
+            </div>
+          </>
+        )}
       </main>
 
       <footer>
         <div className="footer">
-          {posts.map((post) => {
-            return <Footer key={post.id} post={post}></Footer>;
-          })}
+          {nodeByUri && <Footer component={nodeByUri}></Footer>}
         </div>
       </footer>
     </div>
@@ -79,10 +89,17 @@ function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const GET_POSTS = gql`
-    query AllPostsQuery {
-      posts {
-        nodes {
+  const GET_FRONTPAGE = gql`
+    query PageQuery {
+      nodeByUri(uri: "/") {
+        __typename
+        ... on ContentType {
+          id
+          name
+        }
+        ... on Page {
+          id
+          title
           heroSection {
             heroBackground {
               mediaItemUrl
@@ -186,13 +203,13 @@ export async function getStaticProps() {
   `;
 
   const response = await client.query({
-    query: GET_POSTS,
+    query: GET_FRONTPAGE,
   });
 
-  const posts = response?.data?.posts?.nodes;
+  const nodeByUri = response?.data?.nodeByUri;
   return {
     props: {
-      posts,
+      nodeByUri,
     },
   };
 }

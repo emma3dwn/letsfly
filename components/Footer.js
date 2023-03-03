@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import Popup from "./Popup";
 
-function Footer({ post }) {
+function Footer({ component }) {
   return (
     <footer>
       <section className="bg-full bg-black ">
@@ -15,7 +15,7 @@ function Footer({ post }) {
             <Link href="/">
               <img
                 className="w-56"
-                src={post.footer.footerLogo.mediaItemUrl}
+                src={component.footer.footerLogo.mediaItemUrl}
                 alt="Logo"
               />
             </Link>
@@ -26,40 +26,40 @@ function Footer({ post }) {
 
             {/* First Links */}
 
-            <Link href="#">{post.footer.footerLinks.contactLink.title}</Link>
-            <Link href="#">{post.footer.footerLinks.aboutUsLink.title}</Link>
-            <Link href="#">{post.footer.footerLinks.faqLink.title}</Link>
+            <Link href="#">{component.footer.footerLinks.contactLink.title}</Link>
+            <Link href="#">{component.footer.footerLinks.aboutUsLink.title}</Link>
+            <Link href="#">{component.footer.footerLinks.faqLink.title}</Link>
 
             {/* Second Links */}
 
             {/* RIGHT SIDE */}
             <div className=" p-2 w-full md:w-1/2 text-center md:text-right">
-              <p>{post.footer.newsletterSignUp.newsletterSignUpText}</p>
+              <p>{component.footer.newsletterSignUp.newsletterSignUpText}</p>
 
               <div className="flex justify-center	gap-4 my-2">
                 <img
                   className="w-6"
-                  src={post.footer.socialIcons.socialIconLinkedin.mediaItemUrl}
+                  src={component.footer.socialIcons.socialIconLinkedin.mediaItemUrl}
                   alt="Linked in"
                 />
                 <img
                   className="w-6"
-                  src={post.footer.socialIcons.socialIconInstagram.mediaItemUrl}
+                  src={component.footer.socialIcons.socialIconInstagram.mediaItemUrl}
                   alt="Instagram"
                 />
                 <img
                   className="w-6"
-                  src={post.footer.socialIcons.socialIconFacebook.mediaItemUrl}
+                  src={component.footer.socialIcons.socialIconFacebook.mediaItemUrl}
                   alt="Facebook"
                 />
               </div>
             </div>
             <div className="flex justify-center	gap-4 my-2">
-              <Link href="#">{post.footer.footerLinks.termsLink.title}</Link>
-              <Link href="#">{post.footer.footerLinks.privacyLink.title}</Link>
+              <Link href="#">{component.footer.footerLinks.termsLink.title}</Link>
+              <Link href="#">{component.footer.footerLinks.privacyLink.title}</Link>
             </div>
             <div className="flex justify-center	gap-4 my-2">
-              <p> {post.footer.copyright} </p>
+              <p> {component.footer.copyright} </p>
             </div>
           </div>
         </div>
