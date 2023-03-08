@@ -33,7 +33,7 @@ function Navbar({ component }) {
     textColor = "text-white-400";
   }
   return (
-    <header className="sticky w-full top-0 h-24">
+    <header className="fixed w-full h-24 top-0">
       <nav className={`w-full  ${bgColor} text-white ${textColor}`}>
         <div className="container mx-auto p-5">
           {/* NAVBAR MOBILE  */}
