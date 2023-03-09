@@ -16,6 +16,7 @@ import InfoSectionTwo from '../components/InfoSectionTwo';
 import InfoSectionThree from '../components/InfoSectionThree';
 
 function Home({ nodeByUri }) {
+
   return (
     <div>
       <Head>
