@@ -1,13 +1,33 @@
+import { useState } from "react"
+
 function Signup() {
+
+  const [value, setValue] = useState('')
+
+  const fetchAPI = async () => {
+    const response = await fetch('http://localhost:5000', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({email: value})
+    })
+    const data = await response.json()
+    console.log(data)
+  }
+
+
   return (
     <div className="w-5/6 lg:w-4/6 py-2 px-4 rounded-full border-solid border-2 border-white bg-white flex">
       <input
         type="email"
         className="w-full bg-white border-none focus:outline-none text-black placeholder-black "
         placeholder="Enter your email"
+        value={value}
+        onChange={e => { setValue(e.currentTarget.value); }}
       />
 
-      <button className="border-none focus:outline-none" type="submit">
+      <button onClick={fetchAPI} className="border-none focus:outline-none" type="submit">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
